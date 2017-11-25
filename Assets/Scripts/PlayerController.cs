@@ -1,20 +1,21 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-    private int punchReceived;
 
-    public int getPunchReceived() {
+    private int punchReceived = 0;
+
+    public int GetPunchReceived() {
         return punchReceived;
     }
 
-    public void addPunchReceived() {
+    public void AddPunchReceived() {
         punchReceived ++;
     }
 
-    public void initPunch() {
+    public void InitPunch() {
         punchReceived = 0;
     }
-    
+
 }

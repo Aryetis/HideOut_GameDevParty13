@@ -8,6 +8,8 @@ public class MainCamera : MonoBehaviour {
 	private int countY = 2;
 
 	public RectTransform splitScreensRoot;
+	public GameObject horizBar;
+	public GameObject vertBar;
 
 	public int numberOfPlayers = 0;
 
@@ -36,6 +38,12 @@ public class MainCamera : MonoBehaviour {
 	}
 
 	private void CreateUIScreens() {
+		if (countX == 1) {
+			vertBar.SetActive(false);
+		}
+		if (countY == 1) {
+			horizBar.SetActive(false);
+		}
 		float width = 1f / countX;
 		float height = 1f / countY;
 		for (int i = 0; i < numberOfPlayers; i++) {

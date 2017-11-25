@@ -19,6 +19,7 @@ public class PlayerInputs : MonoBehaviour
 	public bool buttonBUp { get; private set; }
 	public bool buttonXUp { get; private set; }
 	private CharacterController cc;
+	[SerializeField]
     private Vector3 moveVector;
     private bool allowMovement;
 

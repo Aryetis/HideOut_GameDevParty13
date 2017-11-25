@@ -818,16 +818,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1286051300005166, guid: ecbae01e97fd125428390c7e74e4fbb5, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 65512069651991974, guid: ecbae01e97fd125428390c7e74e4fbb5,
+    - target: {fileID: 54121622615234252, guid: ecbae01e97fd125428390c7e74e4fbb5,
         type: 2}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114078535375021744, guid: ecbae01e97fd125428390c7e74e4fbb5,
+        type: 2}
+      propertyPath: stunDuration
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 136570556041507158, guid: ecbae01e97fd125428390c7e74e4fbb5, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: ecbae01e97fd125428390c7e74e4fbb5, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &639754040 stripped
@@ -874,16 +876,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1922520981860618, guid: 8fa34d35938223643aacc695e9ba0824, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 65239721315468820, guid: 8fa34d35938223643aacc695e9ba0824,
+    - target: {fileID: 54983077451810680, guid: 8fa34d35938223643aacc695e9ba0824,
         type: 2}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114561703464200420, guid: 8fa34d35938223643aacc695e9ba0824,
+        type: 2}
+      propertyPath: stunDuration
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 136355689909169318, guid: 8fa34d35938223643aacc695e9ba0824, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8fa34d35938223643aacc695e9ba0824, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1098649748 stripped
@@ -930,16 +934,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1347256077345002, guid: 094904626c8a73940accd7bf4c0cb788, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 65232899624986488, guid: 094904626c8a73940accd7bf4c0cb788,
+    - target: {fileID: 54500091522030412, guid: 094904626c8a73940accd7bf4c0cb788,
         type: 2}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114530465714570762, guid: 094904626c8a73940accd7bf4c0cb788,
+        type: 2}
+      propertyPath: stunDuration
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 136352406796673562, guid: 094904626c8a73940accd7bf4c0cb788, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 094904626c8a73940accd7bf4c0cb788, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1159474630 stripped
@@ -1535,16 +1541,18 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1896770110115276, guid: 75437a03a4c01b641bc6d80a91122f0e, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 65197515423366462, guid: 75437a03a4c01b641bc6d80a91122f0e,
+    - target: {fileID: 54015836440623156, guid: 75437a03a4c01b641bc6d80a91122f0e,
         type: 2}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114617303529728124, guid: 75437a03a4c01b641bc6d80a91122f0e,
+        type: 2}
+      propertyPath: stunDuration
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 136664598035996442, guid: 75437a03a4c01b641bc6d80a91122f0e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 75437a03a4c01b641bc6d80a91122f0e, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &2045576467 stripped

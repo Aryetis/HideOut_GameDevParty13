@@ -5,10 +5,14 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour {
     private Collider boxCollider;
     private Collider colliderAttack;
-    [SerializeField]
-    private float blurCoeff;
 
 	private PlayerInputs inputs;
+	public PlayerCamera pcam;
+	private PlayerFOV playerfov;
+
+	public float stunDuration;
+	private float stunTime;
+	private bool isStunned;
 
 	// Use this for initialization
 	void Start () {
@@ -16,10 +20,16 @@ public class PlayerAttack : MonoBehaviour {
 		colliderAttack = boxCollider as Collider;
         colliderAttack.enabled = false;
 		inputs = GetComponent<PlayerInputs>();
+		playerfov = GetComponent<PlayerFOV>();
     }
 	
 	// Update is called once per frame
 	void Update () {
+		if (isStunned && stunTime + stunDuration <= Time.time) {
+			isStunned = false;
+			inputs.SetAllowMovement(true);
+			SetVisibility(0);
+		}
         if (inputs.buttonADown) {
             colliderAttack.enabled = true;
             PunchAttack();
@@ -30,38 +40,52 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
     void OnTriggerEnter(Collider collider) {
-        if (collider.CompareTag("Player")) {
-            PlayerController punch = collider.GetComponent<PlayerController>();
-            punch.addPunchReceived();
-            if(punch.getPunchReceived() == 1) {
-                ReduceFov(blurCoeff);
+        if (collider.CompareTag("Player") && !collider.isTrigger) {
+            PlayerController plaController = collider.GetComponent<PlayerController>();
+			PlayerAttack plaAttack = collider.GetComponent<PlayerAttack>();
+			Debug.Log("coll" + collider);
+			Debug.Log("down: " + inputs.buttonADown, gameObject);
+			Debug.Log("up: " + inputs.buttonAUp, gameObject);
+			plaController.AddPunchReceived();
+            if(plaController.GetPunchReceived() == 1) {
+				plaAttack.SetVisibility(1);
             }
-            if(punch.getPunchReceived() == 2) {
-                ReduceFov(blurCoeff*2);
+            else if(plaController.GetPunchReceived() == 2) {
+				plaAttack.SetVisibility(2);
             }
-            if(punch.getPunchReceived() == 3) {
-                Debug.Log(punch.getPunchReceived());
-                StuntEffect();
-                ReduceFov(blurCoeff*3);
-                punch.initPunch();
+            else if(plaController.GetPunchReceived() == 3) {
+                Debug.Log(plaController.GetPunchReceived());
+				plaAttack.Stun();
+				plaAttack.SetVisibility(3);
+                plaController.InitPunch();
 
             }
-            Debug.Log(collider.GetComponent<PlayerController>().getPunchReceived());
+            Debug.Log(collider.GetComponent<PlayerController>().GetPunchReceived());
         }
     }
 
     //TODO: set punch animation
     void PunchAttack() {
-        Debug.Log("PUCNH !!  ");
+        Debug.Log("PUCNH !!");
     }
+	
+	//TODO: stun anim
+    void Stun() {
+		stunTime = Time.time;
+		isStunned = true;
+		inputs.SetAllowMovement(false);
+    }
+	
+	void SetVisibility(int visibilityCoeff) {
+		Debug.Log("blur : " + visibilityCoeff);
+		if (visibilityCoeff != 0) {
+			pcam.isBlurActive = true;
+			pcam.downRes = visibilityCoeff;
+			playerfov.Intensity = 1f / visibilityCoeff;
+		} else {
+			pcam.isBlurActive = false;
+			playerfov.Intensity = 1f;
+		}
+	}
 
-    //TODO: stunt
-    void StuntEffect() {
-        Debug.Log(" = STUNT");
-    }
-
-    //TODO: Reducingfov with blur
-    void ReduceFov(float blurCoeff) {
-        Debug.Log("blur : " + blurCoeff);
-    }
 }

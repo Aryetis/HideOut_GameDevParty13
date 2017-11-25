@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCamera : MonoBehaviour {
 
-	public Transform player;
+	public GameObject player;
 	public int playerIndex;
 	[Tooltip("Keep at Zero to use offset calculated at start")]
 	public Vector3 offset;
@@ -22,12 +22,13 @@ public class PlayerCamera : MonoBehaviour {
 
 	private void Awake() {
 		if (offset == Vector3.zero) {
-			offset = transform.position - player.position;
+			offset = transform.position - player.transform.position;
 		}
 		cam = GetComponent<Camera>();
 		cam.depth = -10;
 		gameObject.SetActive(false);
-		player = FindObjectOfType<JoystickManager>().playersList[playerIndex].transform;
+		player = FindObjectOfType<JoystickManager>().playersList[playerIndex];
+		player.GetComponent<PlayerAttack>().pcam = this;
 	}
 
 	public void Init(int width, int height) {
@@ -39,7 +40,7 @@ public class PlayerCamera : MonoBehaviour {
 	}
 
 	private void LateUpdate() {
-		transform.position = player.position + offset;
+		transform.position = player.transform.position + offset;
 	}
 
 	private void OnRenderImage(RenderTexture source, RenderTexture destination) {
