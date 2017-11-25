@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerCamera : MonoBehaviour {
 
 	public Transform player;
+	public int playerIndex;
 	[Tooltip("Keep at Zero to use offset calculated at start")]
 	public Vector3 offset;
 	public Material targetMat;
@@ -26,6 +27,7 @@ public class PlayerCamera : MonoBehaviour {
 		cam = GetComponent<Camera>();
 		cam.depth = -10;
 		gameObject.SetActive(false);
+		player = FindObjectOfType<JoystickManager>().playersList[playerIndex].transform;
 	}
 
 	public void Init(int width, int height) {

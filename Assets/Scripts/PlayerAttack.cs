@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         boxCollider = GetComponent<BoxCollider>();
-        colliderAttack = boxCollider.GetComponent<Collider>();
+		colliderAttack = boxCollider as Collider;
         colliderAttack.enabled = false;
 		inputs = GetComponent<PlayerInputs>();
     }

@@ -9,25 +9,28 @@ public class MainCamera : MonoBehaviour {
 
 	public RectTransform splitScreensRoot;
 
-	public int NumberOfPlayers {
-		get {
-			return cameras.Length;
-		}
-	}
+	public int numberOfPlayers = 0;
 
 	private Camera cam;
 
 	private void Awake() {
+		PlayerFolderBehavior playerFolder = FindObjectOfType<PlayerFolderBehavior>();
+		foreach (Transform child in playerFolder.transform) {
+			if (child.gameObject.activeSelf) {
+				numberOfPlayers++;
+			}
+		}
+		Debug.Log(numberOfPlayers);
 		cam = GetComponent<Camera>();
-		countX = (NumberOfPlayers == 1) ? 1 : 2;
-		countY = (NumberOfPlayers <= 2) ? 1 : 2;
+		countX = (numberOfPlayers == 1) ? 1 : 2;
+		countY = (numberOfPlayers <= 2) ? 1 : 2;
 	}
 
 	private void Start() {
 		int pcamWidth = cam.pixelWidth / 2;
 		int pcamHeight = cam.pixelHeight / 2;
-		foreach (PlayerCamera pcam in cameras) {
-			pcam.Init(pcamWidth, pcamHeight);
+		for (int i = 0; i < numberOfPlayers; i++) {
+			cameras[i].Init(pcamWidth, pcamHeight);
 		}
 		CreateUIScreens();
 	}
@@ -35,7 +38,7 @@ public class MainCamera : MonoBehaviour {
 	private void CreateUIScreens() {
 		float width = 1f / countX;
 		float height = 1f / countY;
-		for (int i = 0; i < cameras.Length; i++) {
+		for (int i = 0; i < numberOfPlayers; i++) {
 			float posX = ((countX != 1) ? i % countX : 0) * width;
 			float posY = 1 - ((countY != 1) ? i / countY : 0) * width;
 			CreateUIScreen("Screen" + i, posX, posX + width, posY - height, posY, cameras[i].targetMat);

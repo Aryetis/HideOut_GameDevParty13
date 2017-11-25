@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class JoystickManager : MonoBehaviour
 {
-    private List<GameObject> playersList;
+    public List<GameObject> playersList { get; private set; }
     private GameObject playersFolder;
     private List<GameObject> statusList;
     private bool[] joystickStatus; // false <=> unattributed joystick
@@ -66,7 +66,7 @@ public class JoystickManager : MonoBehaviour
             }
             if(Input.GetKeyDown(KeyCode.Joystick2Button7) && !joystickStatus[1] )
             {
-                Debug.Log("KeyCode.Joystick1Button7 START PRESSED");
+                Debug.Log("KeyCode.Joystick2Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
                 playersList[activePlayersNumber].SetActive(true);
                 playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
@@ -76,7 +76,7 @@ public class JoystickManager : MonoBehaviour
             }
             if(Input.GetKeyDown(KeyCode.Joystick3Button7) && !joystickStatus[2] )
             {
-                Debug.Log("KeyCode.Joystick1Button7 START PRESSED");
+                Debug.Log("KeyCode.Joystick3Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
                 playersList[activePlayersNumber].SetActive(true);
                 playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
