@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/InternalAssets/Scenes/ControllerTestScene.unity
     guid: 91d867211a36b7044a29151adbf43181
+  - enabled: 1
+    path: Assets/InternalAssets/Scenes/PlayerFOVTestScene.unity
+    guid: b0f5f00af8f9cc148ab7ca0757bf0b37

@@ -39,7 +39,7 @@ InputManager:
     joyNum: 1
   - serializedVersion: 3
     m_Name: J1_Horizontal
-    descriptiveName: 
+    descriptiveName: aaaa
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: 
@@ -305,9 +305,8 @@ InputManager:
     dead: 0.001
     sensitivity: 3
     snap: 1
-<<<<<<< HEAD
     invert: 0
-    type: 2
+    type: 0
     axis: 0
     joyNum: 1
   - serializedVersion: 3
@@ -332,18 +331,6 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick 3 button 0
-=======
-    invert: 0
-    type: 0
-    axis: 0
-    joyNum: 1
-  - serializedVersion: 3
-    m_Name: J2_A
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: joystick 2 button 0
->>>>>>> remotes/origin/InputControllers
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -355,19 +342,11 @@ InputManager:
     axis: 0
     joyNum: 4
   - serializedVersion: 3
-<<<<<<< HEAD
     m_Name: J4_A
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick 4 button 0
-=======
-    m_Name: J3_A
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: joystick 3 button 0
->>>>>>> remotes/origin/InputControllers
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -377,49 +356,6 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 4
-<<<<<<< HEAD
-  - serializedVersion: 3
-    m_Name: J5_A
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: joystick 5 button 0
-    positiveButton: 
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 3
-    dead: 0.001
-    sensitivity: 3
-    snap: 1
-    invert: 0
-    type: 0
-    axis: 0
-    joyNum: 5
-  - serializedVersion: 3
-    m_Name: J6_A
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: joystick 6 button 0
-=======
-  - serializedVersion: 3
-    m_Name: J4_A
-    descriptiveName: 
-    descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: joystick 4 button 0
->>>>>>> remotes/origin/InputControllers
-    altNegativeButton: 
-    altPositiveButton: 
-    gravity: 3
-    dead: 0.001
-    sensitivity: 3
-    snap: 1
-    invert: 0
-    type: 0
-    axis: 0
-<<<<<<< HEAD
-=======
     joyNum: 4
   - serializedVersion: 3
     m_Name: J5_A
@@ -452,7 +388,6 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
->>>>>>> remotes/origin/InputControllers
     joyNum: 6
   - serializedVersion: 3
     m_Name: J7_A
