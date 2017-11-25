@@ -73,18 +73,15 @@ ehthumbs.db
 #   Common rules & settings (build, project, etc)   #
 #===================================================#
 !Library/AnnotationManager
+!Library/InputManager.asset
 !Library/assetDatabase3
 !Library/AssertImportState
 !Library/AssetServerCache3
-
 !Library/BuildPlayer.prefs
-
 !Library/AssetVersioning.db
-
 !Library/BuildSettings.asset
 !Library/MonoManager.assert
 !Library/ProjectSettings.asset
-!Library/InputManager.asset
 /rushup_Data
 /rushup.exe
 /Docs/~$D- Rush UP.docx
