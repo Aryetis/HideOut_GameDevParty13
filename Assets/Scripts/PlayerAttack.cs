@@ -8,21 +8,23 @@ public class PlayerAttack : MonoBehaviour {
     [SerializeField]
     private float blurCoeff;
 
+	private PlayerInputs inputs;
+
 	// Use this for initialization
 	void Start () {
         boxCollider = GetComponent<BoxCollider>();
         colliderAttack = boxCollider.GetComponent<Collider>();
         colliderAttack.enabled = false;
-
+		inputs = GetComponent<PlayerInputs>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.E)) {
+        if (inputs.buttonADown) {
             colliderAttack.enabled = true;
             PunchAttack();
         }
-        if (Input.GetKeyUp(KeyCode.E)) {
+        if (inputs.buttonAUp) {
             colliderAttack.enabled = false;
         }
 	}

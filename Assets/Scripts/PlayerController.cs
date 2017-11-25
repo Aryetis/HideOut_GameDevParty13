@@ -16,6 +16,5 @@ public class PlayerController : MonoBehaviour {
     public void initPunch() {
         punchReceived = 0;
     }
-
     
 }

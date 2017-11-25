@@ -818,16 +818,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 54121622615234252, guid: ecbae01e97fd125428390c7e74e4fbb5,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 84
-      objectReference: {fileID: 0}
-    - target: {fileID: 54121622615234252, guid: ecbae01e97fd125428390c7e74e4fbb5,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecbae01e97fd125428390c7e74e4fbb5, type: 2}
   m_IsPrefabParent: 0
@@ -875,16 +865,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 54983077451810680, guid: 8fa34d35938223643aacc695e9ba0824,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 84
-      objectReference: {fileID: 0}
-    - target: {fileID: 54983077451810680, guid: 8fa34d35938223643aacc695e9ba0824,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8fa34d35938223643aacc695e9ba0824, type: 2}
   m_IsPrefabParent: 0
@@ -931,16 +911,6 @@ Prefab:
     - target: {fileID: 4212998960221678, guid: 094904626c8a73940accd7bf4c0cb788, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 54500091522030412, guid: 094904626c8a73940accd7bf4c0cb788,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 84
-      objectReference: {fileID: 0}
-    - target: {fileID: 54500091522030412, guid: 094904626c8a73940accd7bf4c0cb788,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 094904626c8a73940accd7bf4c0cb788, type: 2}
@@ -1536,16 +1506,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4537451029724796, guid: 75437a03a4c01b641bc6d80a91122f0e, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54015836440623156, guid: 75437a03a4c01b641bc6d80a91122f0e,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 84
-      objectReference: {fileID: 0}
-    - target: {fileID: 54015836440623156, guid: 75437a03a4c01b641bc6d80a91122f0e,
-        type: 2}
-      propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
