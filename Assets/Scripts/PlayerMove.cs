@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour {
     private float timeMove;
     private float horizontalMove;
     private float verticalMove;
+    private Vector3 direction;
 
     // Use this for initialization
     void Start () {
@@ -19,6 +20,7 @@ public class PlayerMove : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         PMove();
+        Debug.DrawRay(transform.position, Vector3.forward);
 	}
 
     void PMove() {
@@ -26,6 +28,9 @@ public class PlayerMove : MonoBehaviour {
         horizontalMove = Input.GetAxis("Horizontal") * timeMove;
         verticalMove = Input.GetAxis("Vertical") * timeMove;
 
+//        transform.LookAt(transform.position + new Vector3(horizontalMove, 0, 0) + new Vector3(0, 0, verticalMove));
+
         transform.Translate(horizontalMove * _playerSpeed, 0, verticalMove * _playerSpeed);
+     
     }
 }

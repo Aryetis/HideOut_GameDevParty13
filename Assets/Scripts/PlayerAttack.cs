@@ -41,6 +41,8 @@ public class PlayerAttack : MonoBehaviour {
                 Debug.Log(punch.getPunchReceived());
                 StuntEffect();
                 ReduceFov(blurCoeff*3);
+                punch.initPunch();
+
             }
             Debug.Log(collider.GetComponent<PlayerController>().getPunchReceived());
         }
