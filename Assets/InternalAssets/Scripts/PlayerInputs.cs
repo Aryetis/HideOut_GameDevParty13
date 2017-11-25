@@ -71,4 +71,8 @@ public class PlayerInputs : MonoBehaviour
     {
         allowMovement = allowMovement_;
     }
+
+	public bool GetAllowMovement() {
+		return allowMovement;
+	}
 }

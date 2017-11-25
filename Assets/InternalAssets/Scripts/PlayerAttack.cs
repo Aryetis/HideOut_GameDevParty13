@@ -10,6 +10,8 @@ public class PlayerAttack : MonoBehaviour {
 	public PlayerCamera pcam;
 	private PlayerFOV playerfov;
 
+	private int punchReceived;
+
 	public float stunDuration;
 	private float stunTime;
 	private bool isStunned;
@@ -28,6 +30,7 @@ public class PlayerAttack : MonoBehaviour {
 		if (isStunned && stunTime + stunDuration <= Time.time) {
 			isStunned = false;
 			inputs.SetAllowMovement(true);
+			punchReceived = 0;
 			SetVisibility(0);
 		}
         if (inputs.buttonADown) {
@@ -40,27 +43,25 @@ public class PlayerAttack : MonoBehaviour {
 	}
 
     void OnTriggerEnter(Collider collider) {
-        if (collider.CompareTag("Player") && !collider.isTrigger) {
-            PlayerController plaController = collider.GetComponent<PlayerController>();
+        if (collider.CompareTag("Player") && !collider.isTrigger && inputs.GetAllowMovement()) {
 			PlayerAttack plaAttack = collider.GetComponent<PlayerAttack>();
 			Debug.Log("coll" + collider);
 			Debug.Log("down: " + inputs.buttonADown, gameObject);
 			Debug.Log("up: " + inputs.buttonAUp, gameObject);
-			plaController.AddPunchReceived();
-            if(plaController.GetPunchReceived() == 1) {
+			plaAttack.punchReceived++;
+            if(plaAttack.punchReceived == 1) {
 				plaAttack.SetVisibility(1);
-            }
-            else if(plaController.GetPunchReceived() == 2) {
+				plaAttack.Stun(false);
+			}
+            else if(plaAttack.punchReceived == 2) {
 				plaAttack.SetVisibility(2);
-            }
-            else if(plaController.GetPunchReceived() == 3) {
-                Debug.Log(plaController.GetPunchReceived());
-				plaAttack.Stun();
+				plaAttack.Stun(false);
+			}
+            else if(plaAttack.punchReceived == 3) {
+                Debug.Log(plaAttack.punchReceived);
 				plaAttack.SetVisibility(3);
-                plaController.InitPunch();
-
+				plaAttack.Stun(true);
             }
-            Debug.Log(collider.GetComponent<PlayerController>().GetPunchReceived());
         }
     }
 
@@ -70,10 +71,10 @@ public class PlayerAttack : MonoBehaviour {
     }
 	
 	//TODO: stun anim
-    void Stun() {
+    void Stun(bool freezeMovement) {
 		stunTime = Time.time;
 		isStunned = true;
-		inputs.SetAllowMovement(false);
+		inputs.SetAllowMovement(!freezeMovement);
     }
 	
 	void SetVisibility(int visibilityCoeff) {
