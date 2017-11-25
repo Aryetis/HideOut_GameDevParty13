@@ -214,8 +214,6 @@ MonoBehaviour:
   - {fileID: 1964059507}
   - {fileID: 1926059052}
   - {fileID: 770416589}
-  countX: 2
-  countY: 2
   splitScreensRoot: {fileID: 954515761}
 --- !u!1 &240180672
 GameObject:

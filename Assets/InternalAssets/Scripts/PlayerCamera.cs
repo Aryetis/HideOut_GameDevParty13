@@ -17,6 +17,7 @@ public class PlayerCamera : MonoBehaviour {
 
 	private Camera cam;
 	private RenderTexture renderTexture;
+	private bool isUsed = false;
 
 	private void Awake() {
 		if (offset == Vector3.zero) {
@@ -24,9 +25,12 @@ public class PlayerCamera : MonoBehaviour {
 		}
 		cam = GetComponent<Camera>();
 		cam.depth = -10;
+		gameObject.SetActive(false);
 	}
 
 	public void Init(int width, int height) {
+		gameObject.SetActive(true);
+		isUsed = true;
 		renderTexture = new RenderTexture(width, height, 16);
 		cam.targetTexture = renderTexture;
 		targetMat.SetTexture("_MainTex", renderTexture);
@@ -54,6 +58,7 @@ public class PlayerCamera : MonoBehaviour {
 	}
 
 	private void OnDestroy() {
+		if (!isUsed) return;
 		renderTexture.DiscardContents();
 		renderTexture.Release();
 	}

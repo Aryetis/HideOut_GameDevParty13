@@ -4,11 +4,10 @@ using UnityEngine.UI;
 public class MainCamera : MonoBehaviour {
 
 	public PlayerCamera[] cameras;
-	public int countX = 2;
-	public int countY = 2;
+	private int countX = 2;
+	private int countY = 2;
 
 	public RectTransform splitScreensRoot;
-
 
 	public int NumberOfPlayers {
 		get {
@@ -20,6 +19,8 @@ public class MainCamera : MonoBehaviour {
 
 	private void Awake() {
 		cam = GetComponent<Camera>();
+		countX = (NumberOfPlayers == 1) ? 1 : 2;
+		countY = (NumberOfPlayers <= 2) ? 1 : 2;
 	}
 
 	private void Start() {
