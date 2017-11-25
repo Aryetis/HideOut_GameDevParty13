@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class PlayerInputs : MonoBehaviour 
 {
-    [Range(1,4)] public int joyNumber; // use Kecode.KeyCode.Joystick[joyNumber+1]ButtonXXX for buttons , and P[joyNumber]_[Horizontal/Vertical] for axis
     public float speed;
 
+    private int joyNumber; // use Kecode.KeyCode.Joystick[joyNumber+1]ButtonXXX for buttons , and P[joyNumber]_[Horizontal/Vertical] for axis
     private float leftJoystickHorizontalInput;
     private float leftJoystickVerticalInput;
-    private float rightJoystickHorizontalInput;
-    private float rightJoystickVerticalInput;
     private bool buttonA;
     private bool buttonB;
     private bool buttonX;
-    private bool buttonY;
-    private bool lb;
-    private bool rb;
+    private bool buttonADown;
+    private bool buttonBDown;
+    private bool buttonXDown;
     private CharacterController cc;
     private Vector3 moveVector;
+    private bool allowMovement;
 
 	// Use this for initialization
 	void Start ()
     {
+        allowMovement = false;
         moveVector = new Vector3();
         cc = GetComponent<CharacterController>();
 	}
@@ -33,40 +33,34 @@ public class PlayerInputs : MonoBehaviour
         /*******************************************
          * Update inputs according to playerNumber *
          *******************************************/
-        switch(joyNumber)
-        {
-            case 0:
-            {
-                leftJoystickHorizontalInput = Input.GetAxis("P1_Horizontal");
-                leftJoystickVerticalInput = Input.GetAxis("P1_Vertical");
-                break;
-            }
-            case 1:
-            {
-                leftJoystickHorizontalInput = Input.GetAxis("P2_Horizontal");
-                leftJoystickVerticalInput = Input.GetAxis("P2_Vertical");
-                break;
-            }
-            case 2:
-            {
-                leftJoystickHorizontalInput = Input.GetAxis("P3_Horizontal");
-                leftJoystickVerticalInput = Input.GetAxis("P3_Vertical");
-                break;
-            }
-            case 3:
-            {
-                leftJoystickHorizontalInput = Input.GetAxis("P4_Horizontal");
-                leftJoystickVerticalInput = Input.GetAxis("P4_Vertical");
-                break;
-            }
-            default: { /*Debug.LogError("playerNumber not set for a player");*/ break;}
-        }
+        leftJoystickHorizontalInput = Input.GetAxis("J" + joyNumber + "_Horizontal");
+        leftJoystickVerticalInput = Input.GetAxis("J" + joyNumber + "_Vertical");
+        buttonA = Input.GetButton("J" + joyNumber + "_A");
+        buttonADown = Input.GetButtonDown("J" + joyNumber + "_A");
+        buttonB = Input.GetButton("J" + joyNumber + "_B");
+        buttonBDown = Input.GetButtonDown("J" + joyNumber + "_B");
+        buttonX = Input.GetButton("J" + joyNumber + "_X");
+        buttonXDown = Input.GetButtonDown("J" + joyNumber + "_X");
 
         /************************************
          *        APPLY MOVE VECTOR         *
          ************************************/
-        moveVector.x = leftJoystickHorizontalInput;
-        moveVector.z = leftJoystickVerticalInput;
-        cc.Move(moveVector * speed * Time.deltaTime);
+        if(allowMovement)
+        {
+            moveVector.x = leftJoystickHorizontalInput;
+            moveVector.y = 0;
+            moveVector.z = leftJoystickVerticalInput;
+            cc.Move(moveVector * speed * Time.deltaTime);
+        }
 	}
+
+    public void SetJoyNumber(int joyNumber_)
+    {
+        joyNumber = joyNumber_;
+    }
+
+    public void SetAllowMovement(bool allowMovement_)
+    {
+        allowMovement = allowMovement_;
+    }
 }

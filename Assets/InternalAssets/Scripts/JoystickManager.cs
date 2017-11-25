@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class JoystickManager : MonoBehaviour
 {
@@ -57,7 +59,8 @@ public class JoystickManager : MonoBehaviour
                 Debug.Log("KeyCode.Joystick1Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
                 playersList[activePlayersNumber].SetActive(true);
-                playersList[activePlayersNumber].GetComponent<PlayerInputs>().joyNumber = 0;
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(1);
                 activePlayersNumber++;
                 joystickStatus[0] = true; 
             }
@@ -66,7 +69,8 @@ public class JoystickManager : MonoBehaviour
                 Debug.Log("KeyCode.Joystick1Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
                 playersList[activePlayersNumber].SetActive(true);
-                playersList[activePlayersNumber].GetComponent<PlayerInputs>().joyNumber = 1;
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(2);
                 activePlayersNumber++;
                 joystickStatus[1] = true;
             }
@@ -75,7 +79,8 @@ public class JoystickManager : MonoBehaviour
                 Debug.Log("KeyCode.Joystick1Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
                 playersList[activePlayersNumber].SetActive(true);
-                playersList[activePlayersNumber].GetComponent<PlayerInputs>().joyNumber = 2;
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(3);
                 activePlayersNumber++;
                 joystickStatus[2] = true; 
             }
@@ -84,7 +89,8 @@ public class JoystickManager : MonoBehaviour
                 Debug.Log("KeyCode.Joystick4Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
                 playersList[activePlayersNumber].SetActive(true);
-                playersList[activePlayersNumber].GetComponent<PlayerInputs>().joyNumber = 3;
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(4);
                 activePlayersNumber++;
                 joystickStatus[3] = true;   
             }
@@ -93,7 +99,8 @@ public class JoystickManager : MonoBehaviour
                 Debug.Log("KeyCode.Joystick5Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
                 playersList[activePlayersNumber].SetActive(true);
-                playersList[activePlayersNumber].GetComponent<PlayerInputs>().joyNumber = 4;
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(5);
                 activePlayersNumber++;
                 joystickStatus[4] = true;    
             }
@@ -102,7 +109,8 @@ public class JoystickManager : MonoBehaviour
                 Debug.Log("KeyCode.Joystick6Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
                 playersList[activePlayersNumber].SetActive(true);
-                playersList[activePlayersNumber].GetComponent<PlayerInputs>().joyNumber = 5;
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(6);
                 activePlayersNumber++;
                 joystickStatus[5] = true; 
             }
@@ -111,7 +119,8 @@ public class JoystickManager : MonoBehaviour
                 Debug.Log("KeyCode.Joystick7Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
                 playersList[activePlayersNumber].SetActive(true);
-                playersList[activePlayersNumber].GetComponent<PlayerInputs>().joyNumber = 6;
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(7);
                 activePlayersNumber++;
                 joystickStatus[6] = true; 
             }
@@ -120,7 +129,8 @@ public class JoystickManager : MonoBehaviour
                 Debug.Log("KeyCode.Joystick8Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
                 playersList[activePlayersNumber].SetActive(true);
-                playersList[activePlayersNumber].GetComponent<PlayerInputs>().joyNumber = 7;
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(8);
                 activePlayersNumber++;
                 joystickStatus[7] = true; 
             }
@@ -131,7 +141,7 @@ public class JoystickManager : MonoBehaviour
         /*****************************
          * HOLD START TO LAUNCH GAME *
          *****************************/
-        if(TimerToStart <= 0)
-            Debug.Log("LAUNCHING GAME");
+        if(TimerToStart <= 0 &&  SceneManager.GetActiveScene().name == "PlayersSelectionScene")
+            SceneManager.LoadScene("ControllerTestScene");
 	}
 }
