@@ -142,6 +142,6 @@ public class JoystickManager : MonoBehaviour
          * HOLD START TO LAUNCH GAME *
          *****************************/
         if(TimerToStart <= 0 &&  SceneManager.GetActiveScene().name == "PlayersSelectionScene")
-            SceneManager.LoadScene("ControllerTestScene");
+            SceneManager.LoadScene("SonarTestScene");
 	}
 }
