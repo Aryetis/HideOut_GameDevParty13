@@ -529,6 +529,10 @@ GameObject:
   - component: {fileID: 1507217096}
   - component: {fileID: 1507217095}
   - component: {fileID: 1507217100}
+  - component: {fileID: 1507217104}
+  - component: {fileID: 1507217103}
+  - component: {fileID: 1507217102}
+  - component: {fileID: 1507217101}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -587,11 +591,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1507217094}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 1, y: 0, z: 0}
 --- !u!33 &1507217098
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -630,6 +634,56 @@ MonoBehaviour:
   _FOVRange: 100
   _aroundRange: 20
   _intensity: 1
+--- !u!114 &1507217101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507217094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8733d7a3764cecc4f945fa8daef37a31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1507217102
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507217094}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1507217103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507217094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c30f76b849d8634399c6ca13c690fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blurCoeff: 2
+--- !u!54 &1507217104
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1507217094}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!1 &1669096218
 GameObject:
   m_ObjectHideFlags: 0
