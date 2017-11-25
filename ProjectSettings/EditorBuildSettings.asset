@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/InternalAssets/Scenes/PlayersSelectionScene.unity
+    guid: 5a15ee9c9047525438c57a2adddf2dc9
+  - enabled: 1
+    path: Assets/InternalAssets/Scenes/ControllerTestScene.unity
+    guid: 91d867211a36b7044a29151adbf43181
