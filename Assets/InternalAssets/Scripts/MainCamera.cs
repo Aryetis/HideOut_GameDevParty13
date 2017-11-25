@@ -48,8 +48,6 @@ public class MainCamera : MonoBehaviour {
 		RectTransform rect = go.AddComponent<RectTransform>();
 		rect.anchorMin = new Vector2(xmin, ymin);
 		rect.anchorMax = new Vector2(xmax, ymax);
-		float width = xmax - xmin;
-		float height = ymax - ymin;
 		rect.offsetMin = Vector2.zero;
 		rect.offsetMax = Vector2.zero;
 		RawImage img = go.AddComponent<RawImage>();

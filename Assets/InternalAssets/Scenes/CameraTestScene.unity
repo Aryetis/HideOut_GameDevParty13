@@ -209,10 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2abeb0ee5e313364aacb684bc78fa2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera1: {fileID: 1875623698}
-  camera2: {fileID: 1964059507}
-  camera3: {fileID: 1926059052}
-  camera4: {fileID: 770416589}
   cameras:
   - {fileID: 1875623698}
   - {fileID: 1964059507}
@@ -419,7 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.647, g: 0.647, b: 0.647, a: 1}
+  m_Color: {r: 0.646, g: 0.927784, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1060,7 +1056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.647, g: 0.647, b: 0.647, a: 1}
+  m_Color: {r: 0.646, g: 0.927784, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
