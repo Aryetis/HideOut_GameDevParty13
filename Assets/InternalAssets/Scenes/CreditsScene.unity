@@ -511,7 +511,8 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Programmers :\nOTHENIN Jeremy\nLAUZIER Maeva\nBRISAC Alfred\nGAILLARD Matthias\n\nGraphics
-    Designer : \nAMADOU HAMIDOU Yacine"
+    Designer : \nAMADOU HAMIDOU Yacine\n\nMusic by Myuu\n\nTextures: Poliigon.com,
+    textures.com\nDoors: BlueTokio"
 --- !u!222 &1776333598
 CanvasRenderer:
   m_ObjectHideFlags: 0

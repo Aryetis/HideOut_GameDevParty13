@@ -14,6 +14,8 @@ public class JoystickManager : MonoBehaviour
     private int activePlayersNumber;
     private float TimerToStart;
 
+	public AudioClip gameMusic;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -145,12 +147,17 @@ public class JoystickManager : MonoBehaviour
 			TimerToStart = 2.0f;
 		}
 
-        /*****************************
+		/*****************************
          * HOLD START TO LAUNCH GAME *
          *****************************/
-        if(TimerToStart <= 0 &&  SceneManager.GetActiveScene().name == "PlayersSelectionScene")
+		if (TimerToStart <= 0 && SceneManager.GetActiveScene().name == "PlayersSelectionScene") {
 			//SceneManager.LoadScene("SonarTestScene");
 			//SceneManager.LoadScene("ControllerTestScene");
 			SceneManager.LoadScene("MainGame");
+			SoundManager.I.musicSource.Stop();
+			SoundManager.I.musicSource.clip = gameMusic;
+			SoundManager.I.musicSource.Play();
+		}
+			
 	}
 }
