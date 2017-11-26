@@ -62,7 +62,7 @@ public class PlayerInputs : MonoBehaviour
             moveVector.z = leftJoystickVerticalInput;
             cc.Move(moveVector * speed * Time.deltaTime);
 			transform.LookAt(transform.position + moveVector);
-            animBody.SetFloat("runSpeed", Mathf.Abs(moveVector.x+moveVector.z));
+			animBody.SetFloat("runSpeed", Mathf.Abs(moveVector.x)+Mathf.Abs(moveVector.z));
         }
 	}
 

@@ -25,7 +25,7 @@ public class MoveEnemy : MonoBehaviour {
 		agent = GetComponent<NavMeshAgent>();
 		goalPosition = RandomPoint(transform.position, rangeMax);
 		agent.destination = goalPosition;
-		animBody = GameObject.Find("Jason").GetComponent <Animator> ();
+		animBody = GetComponent <Animator> ();
 	}
 	
 	// Update is called once per frame

@@ -16,6 +16,7 @@ public class PlayerAttack : MonoBehaviour {
 	private float stunTime;
 	private bool isStunned;
 	private Animator animBody;
+	private PlayerAttack plaAttack;
     public AudioClip punchEfx;
 
 	// Use this for initialization
@@ -36,14 +37,14 @@ public class PlayerAttack : MonoBehaviour {
 			punchReceived = 0;
 			SetVisibility(0);
 		}
-        if (inputs.buttonADown) {
+        if (inputs.buttonXDown) {
 			animBody.SetBool("isPunching", true);
             colliderAttack.enabled = true;
             SoundManager.instance.PlaySingle(punchEfx);
             PunchAttack();
 
         }
-        if (inputs.buttonAUp) {
+        if (inputs.buttonXUp) {
             colliderAttack.enabled = false;
 			animBody.SetBool("isPunching", false);
         }
@@ -51,10 +52,10 @@ public class PlayerAttack : MonoBehaviour {
 
     void OnTriggerEnter(Collider collider) {
         if (collider.CompareTag("Player") && !collider.isTrigger && inputs.GetAllowMovement()) {
-			PlayerAttack plaAttack = collider.GetComponent<PlayerAttack>();
+			plaAttack = collider.GetComponent<PlayerAttack>();
 			Debug.Log("coll" + collider);
-			Debug.Log("down: " + inputs.buttonADown, gameObject);
-			Debug.Log("up: " + inputs.buttonAUp, gameObject);
+			Debug.Log("down: " + inputs.buttonXDown, gameObject);
+			Debug.Log("up: " + inputs.buttonXUp, gameObject);
 			plaAttack.punchReceived++;
             if(plaAttack.punchReceived == 1) {
 				plaAttack.SetVisibility(1);
@@ -65,11 +66,13 @@ public class PlayerAttack : MonoBehaviour {
 				plaAttack.Stun(false);
 			}
             else if(plaAttack.punchReceived == 3) {
-				animBody.SetBool("isKnocked", true);
+				Debug.Log ("T'ES MORT !");
+				plaAttack.animBody.SetBool("isKnocked", true);
                 Debug.Log(plaAttack.punchReceived);
 				plaAttack.SetVisibility(3);
 				plaAttack.Stun(true);
-				animBody.SetBool("isKnocked", false);
+
+				Invoke ("Stun", 2);
             }
         }
     }
@@ -78,6 +81,10 @@ public class PlayerAttack : MonoBehaviour {
     void PunchAttack() {
         Debug.Log("PUCNH !!");
     }
+
+	void Stun(){
+		plaAttack.animBody.SetBool("isKnocked", false);
+	}
 	
 	//TODO: stun anim
     void Stun(bool freezeMovement) {

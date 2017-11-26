@@ -17,11 +17,12 @@ public class Detection : MonoBehaviour
     [Range(0.0F, 1.0F)]
     public float Opacity = 1.0F;
     public AudioClip doorEfx;
+	private Animator animBody;
 
     void Start() {
         gameObject.name = "Player";
         gameObject.tag = "Player";
-
+		animBody = GetComponent <Animator> ();
         DebugRayColor.a = Opacity; // Set the alpha value of the DebugRayColor
     }
 
@@ -42,12 +43,14 @@ public class Detection : MonoBehaviour
                 // Get access to the 'Door' script attached to the object that was hit
                 Door dooropening = Door.GetComponent<Door>();
                 Debug.Log("I SEE U");
-                if (GetComponent<PlayerInputs>().buttonXDown) {
+                if (GetComponent<PlayerInputs>().buttonADown) {
                     // Open/close the door by running the 'Open' function found in the 'Door' script
                     if (dooropening.RotationPending == false) {
+						animBody.SetBool("isInteract", true);
                         SoundManager.instance.PlaySingle(doorEfx);
                         hit.collider.GetComponent<Door>().Speed = 1;
                         StartCoroutine(hit.collider.GetComponent<Door>().Move());
+						animBody.SetBool("isInteract", false);
                     }
                 }
             } else {
