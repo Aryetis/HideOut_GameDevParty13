@@ -22,6 +22,7 @@ public class PlayerDie : MonoBehaviour {
 			if (hit.collider.gameObject.CompareTag ("Enemy")) {
 				hit.collider.gameObject.GetComponent<Animator>().SetBool("isPunching", true);
 				animBody.SetBool("isDead", true);
+				GetComponent<PlayerInputs>().SetAllowMovement(false);
 				Invoke ("Disappear", 5);
 				hit.collider.gameObject.GetComponent<Animator>().SetBool("isPunching", false);
 			}
