@@ -108,7 +108,7 @@ MonoBehaviour:
   InitialAngle: 0
   RotationAngle: 90
   RotationSide: 0
-  Speed: 1
+  Speed: 10
   TimesMoveable: 0
   HingeType: 0
   HingePosition: 0

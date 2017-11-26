@@ -5,9 +5,12 @@ using UnityEngine;
 public class SeePlayer : MonoBehaviour {
 
 	GameObject enemy;
+    public AudioClip seeEfx;
+    private bool playFx = false;
+    private float time;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		enemy = GameObject.FindGameObjectWithTag ("Enemy");
 	}
 	
@@ -24,7 +27,7 @@ public class SeePlayer : MonoBehaviour {
 				if(Physics.Raycast(enemy.transform.position, (col.gameObject.transform.position - enemy.transform.position), out hit)){
 					if (hit.transform == col.gameObject.transform) {
 						Debug.Log ("Y A UN MEC !");
-						gameObject.GetComponentInParent<MoveEnemy> ().setSeePlayer(true);
+						gameObject.GetComponentInParent<MoveEnemy> ().setSeePlayer(true);      
 						gameObject.GetComponentInParent<MoveEnemy> ().setGoalPosition(col.gameObject.transform.position);
 					}
 				}

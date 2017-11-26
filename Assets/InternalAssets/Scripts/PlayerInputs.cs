@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInputs : MonoBehaviour 
 {
     public float speed;
+    public AudioClip runEfx;
 
     private int joyNumber; // use Kecode.KeyCode.Joystick[joyNumber+1]ButtonXXX for buttons , and P[joyNumber]_[Horizontal/Vertical] for axis
     private float leftJoystickHorizontalInput;
@@ -61,7 +62,7 @@ public class PlayerInputs : MonoBehaviour
             moveVector.z = leftJoystickVerticalInput;
             cc.Move(moveVector * speed * Time.deltaTime);
 			transform.LookAt(transform.position + moveVector);
-			animBody.SetFloat("runSpeed", Mathf.Abs(moveVector.x+moveVector.z));
+            animBody.SetFloat("runSpeed", Mathf.Abs(moveVector.x+moveVector.z));
         }
 	}
 

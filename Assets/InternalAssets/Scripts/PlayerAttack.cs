@@ -16,6 +16,7 @@ public class PlayerAttack : MonoBehaviour {
 	private float stunTime;
 	private bool isStunned;
 	private Animator animBody;
+    public AudioClip punchEfx;
 
 	// Use this for initialization
 	void Start () {
@@ -38,7 +39,9 @@ public class PlayerAttack : MonoBehaviour {
         if (inputs.buttonADown) {
 			animBody.SetBool("isPunching", true);
             colliderAttack.enabled = true;
+            SoundManager.instance.PlaySingle(punchEfx);
             PunchAttack();
+
         }
         if (inputs.buttonAUp) {
             colliderAttack.enabled = false;
