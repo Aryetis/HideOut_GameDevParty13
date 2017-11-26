@@ -21,7 +21,7 @@ public class Door : MonoBehaviour
     public TypeOfHinge HingeType;
 
     public enum PositionOfHinge { Left, Right }
-   // [ConditionalHide("HingeType", true, false)]
+    //[ConditionalHide("HingeType", true, false)]
     public PositionOfHinge HingePosition;
 
     // PRIVATE SETTINGS - NOT VISIBLE FOR THE USER
