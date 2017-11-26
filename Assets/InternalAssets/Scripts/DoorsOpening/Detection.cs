@@ -16,6 +16,7 @@ public class Detection : MonoBehaviour
     [Tooltip("The opacity of the debugray.")]
     [Range(0.0F, 1.0F)]
     public float Opacity = 1.0F;
+    public AudioClip doorEfx;
 
     void Start() {
         gameObject.name = "Player";
@@ -40,10 +41,14 @@ public class Detection : MonoBehaviour
 
                 // Get access to the 'Door' script attached to the object that was hit
                 Door dooropening = Door.GetComponent<Door>();
-
+                Debug.Log("I SEE U");
                 if (GetComponent<PlayerInputs>().buttonXDown) {
                     // Open/close the door by running the 'Open' function found in the 'Door' script
-                    if (dooropening.RotationPending == false) StartCoroutine(hit.collider.GetComponent<Door>().Move());
+                    if (dooropening.RotationPending == false) {
+                        SoundManager.instance.PlaySingle(doorEfx);
+                        hit.collider.GetComponent<Door>().Speed = 1;
+                        StartCoroutine(hit.collider.GetComponent<Door>().Move());
+                    }
                 }
             } else {
                 InReach = false;

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33780767990168600}
   - component: {fileID: 23987021255395842}
   - component: {fileID: 114942119952105112}
+  - component: {fileID: 65537623297597084}
   m_Layer: 0
   m_Name: DoorPrefab
   m_TagString: Untagged
@@ -81,6 +82,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1430922505192950}
   m_Mesh: {fileID: 4300000, guid: b9cec1db6ab13834889b990994d2a26a, type: 3}
+--- !u!65 &65537623297597084
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1430922505192950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.200006, y: 1.0000428, z: 1.0001268}
+  m_Center: {x: 0.000000029802322, y: 3.2311743e-27, z: 0}
 --- !u!114 &114942119952105112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,7 +108,7 @@ MonoBehaviour:
   InitialAngle: 0
   RotationAngle: 90
   RotationSide: 0
-  Speed: 3
+  Speed: 1
   TimesMoveable: 0
   HingeType: 0
   HingePosition: 0

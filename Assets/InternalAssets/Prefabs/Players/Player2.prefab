@@ -718,6 +718,7 @@ MonoBehaviour:
   Character: e
   DebugRayColor: {r: 0, g: 0, b: 0, a: 0}
   Opacity: 1
+  doorEfx: {fileID: 8300000, guid: d21b8fb757f0c334093255ebbae5f07a, type: 3}
 --- !u!143 &143487853370763558
 CharacterController:
   m_ObjectHideFlags: 1
