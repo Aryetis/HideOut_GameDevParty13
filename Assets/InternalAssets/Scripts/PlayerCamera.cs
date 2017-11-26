@@ -106,6 +106,7 @@ public class PlayerCamera : MonoBehaviour {
     }
 
 	private void LateUpdate() {
+		if (!gameObject || !player) return;
 		transform.position = player.transform.position + offset;
 	}
 

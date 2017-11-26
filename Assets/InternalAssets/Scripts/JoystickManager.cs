@@ -137,11 +137,11 @@ public class JoystickManager : MonoBehaviour
 
         }
 
-		if (Input.GetButton("PALL_Start") || Input.GetKey(KeyCode.Return)) {
+		if (Input.GetButton("JALL_Start") || Input.GetKey(KeyCode.Return)) {
             TimerToStart -= Time.deltaTime;
 		}
 
-		if (Input.GetButtonUp("PALL_Start")) {
+		if (Input.GetButtonUp("JALL_Start")) {
 			TimerToStart = 2.0f;
 		}
 
