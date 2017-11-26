@@ -21,7 +21,6 @@ public class InteractDoor : MonoBehaviour {
 
 			if (col.gameObject.CompareTag ("Door")) {
 				animBody.SetBool("isOpening", true);
-				Debug.Log ("BAM LA PORTE !");
 				col.gameObject.GetComponent<DoorController>().openDoor();
 				animBody.SetBool("isOpening", false);
 			}
