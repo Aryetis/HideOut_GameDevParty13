@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: db82c16acf1f060439dc0913f160acb5
+timeCreated: 1511655480
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Chest
+    100002: Head
+    100004: Joint.10
+    100006: Joint.10.2
+    100008: Joint.10.3
+    100010: Joint.10.4
+    100012: Joint.10.5
+    100014: Joint.5
+    100016: Joint.5.2
+    100018: Joint.5.3
+    100020: Joint.5.4
+    100022: Joint.5.5
+    100024: Joint.6
+    100026: Joint.6.2
+    100028: Joint.6.3
+    100030: Joint.6.4
+    100032: Joint.6.5
+    100034: Joint.9
+    100036: Joint.9.2
+    100038: Joint.9.3
+    100040: Joint.9.4
+    100042: Joint.9.5
+    100044: Kneck
+    100046: Left Ankle
+    100048: Left Elbow
+    100050: Left Finger 1
+    100052: Left Finger 2
+    100054: Left Finger 3
+    100056: Left Finger 4
+    100058: Left Finger 5
+    100060: Left Foot
+    100062: left Forearm
+    100064: Left Hip
+    100066: Left Knee
+    100068: Left Shoulder
+    100070: Left Toes
+    100072: Left Wrist
+    100074: Marlton
+    100076: Neutre
+    100078: //RootNode
+    100080: Pelvis
+    100082: Right Ankle
+    100084: Right Elbow
+    100086: Right Finger 1
+    100088: Right Finger 2
+    100090: Right Finger 3
+    100092: Right Finger 4
+    100094: Right Finger 5
+    100096: Right Foot
+    100098: Right Forearm
+    100100: Right Hip
+    100102: Right Knee
+    100104: Right Shoulder
+    100106: Right Toes
+    100108: Right Wrist
+    100110: Root
+    100112: Shoulders
+    100114: Waist
+    400000: Chest
+    400002: Head
+    400004: Joint.10
+    400006: Joint.10.2
+    400008: Joint.10.3
+    400010: Joint.10.4
+    400012: Joint.10.5
+    400014: Joint.5
+    400016: Joint.5.2
+    400018: Joint.5.3
+    400020: Joint.5.4
+    400022: Joint.5.5
+    400024: Joint.6
+    400026: Joint.6.2
+    400028: Joint.6.3
+    400030: Joint.6.4
+    400032: Joint.6.5
+    400034: Joint.9
+    400036: Joint.9.2
+    400038: Joint.9.3
+    400040: Joint.9.4
+    400042: Joint.9.5
+    400044: Kneck
+    400046: Left Ankle
+    400048: Left Elbow
+    400050: Left Finger 1
+    400052: Left Finger 2
+    400054: Left Finger 3
+    400056: Left Finger 4
+    400058: Left Finger 5
+    400060: Left Foot
+    400062: left Forearm
+    400064: Left Hip
+    400066: Left Knee
+    400068: Left Shoulder
+    400070: Left Toes
+    400072: Left Wrist
+    400074: Marlton
+    400076: Neutre
+    400078: //RootNode
+    400080: Pelvis
+    400082: Right Ankle
+    400084: Right Elbow
+    400086: Right Finger 1
+    400088: Right Finger 2
+    400090: Right Finger 3
+    400092: Right Finger 4
+    400094: Right Finger 5
+    400096: Right Foot
+    400098: Right Forearm
+    400100: Right Hip
+    400102: Right Knee
+    400104: Right Shoulder
+    400106: Right Toes
+    400108: Right Wrist
+    400110: Root
+    400112: Shoulders
+    400114: Waist
+    4300000: Marlton
+    7400000: P1_Punching
+    9500000: //RootNode
+    13700000: Marlton
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: P1_Punching
+      takeName: mixamo.com
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -22,10 +22,10 @@ GameObject:
   - component: {fileID: 33780767990168600}
   - component: {fileID: 23987021255395842}
   - component: {fileID: 114942119952105112}
-  - component: {fileID: 65537623297597084}
+  - component: {fileID: 65553729168599834}
   m_Layer: 0
   m_Name: DoorPrefab
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,6 +52,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -67,6 +68,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -82,7 +84,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1430922505192950}
   m_Mesh: {fileID: 4300000, guid: b9cec1db6ab13834889b990994d2a26a, type: 3}
---- !u!65 &65537623297597084
+--- !u!65 &65553729168599834
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -108,7 +110,7 @@ MonoBehaviour:
   InitialAngle: 0
   RotationAngle: 90
   RotationSide: 0
-  Speed: 10
+  Speed: 3
   TimesMoveable: 0
   HingeType: 0
   HingePosition: 0
