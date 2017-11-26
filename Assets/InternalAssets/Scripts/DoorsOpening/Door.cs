@@ -67,15 +67,15 @@ public class Door : MonoBehaviour
             float RotDoorX = transform.localEulerAngles.x;
             float RotDoorZ = transform.localEulerAngles.z;
 
-            float ScaleDoorX = transform.localScale.x;
-            float ScaleDoorZ = transform.localScale.z;
+            float ScaleDoorX = transform.lossyScale.x;
+            float ScaleDoorZ = transform.lossyScale.z;
 
             // Create a placeholder/temporary object of the hinge's position/rotation
             Vector3 HingePosCopy = hinge.transform.position;
             Vector3 HingeRotCopy = hinge.transform.localEulerAngles;
 
             if (HingePosition == PositionOfHinge.Left) {
-                if (transform.localScale.x > transform.localScale.z) {
+                if (transform.lossyScale.x > transform.lossyScale.z) {
                     HingePosCopy.x = (PosDoorX - (ScaleDoorX / 2 * CosDeg));
                     HingePosCopy.z = (PosDoorZ + (ScaleDoorX / 2 * SinDeg));
                     HingePosCopy.y = PosDoorY;
@@ -95,7 +95,7 @@ public class Door : MonoBehaviour
             }
 
             if (HingePosition == PositionOfHinge.Right) {
-                if (transform.localScale.x > transform.localScale.z) {
+                if (transform.lossyScale.x > transform.lossyScale.z) {
                     HingePosCopy.x = (PosDoorX + (ScaleDoorX / 2 * CosDeg));
                     HingePosCopy.z = (PosDoorZ - (ScaleDoorX / 2 * SinDeg));
                     HingePosCopy.y = PosDoorY;
