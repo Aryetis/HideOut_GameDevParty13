@@ -20,8 +20,8 @@ public class Detection : MonoBehaviour
 	private Animator animBody;
 
     void Start() {
-        gameObject.name = "Player";
-        gameObject.tag = "Player";
+        //gameObject.name = "Player";
+        //gameObject.tag = "Player";
 		animBody = GetComponent <Animator> ();
         DebugRayColor.a = Opacity; // Set the alpha value of the DebugRayColor
     }
@@ -43,16 +43,27 @@ public class Detection : MonoBehaviour
                 // Get access to the 'Door' script attached to the object that was hit
                 Door dooropening = Door.GetComponent<Door>();
                 Debug.Log("I SEE U");
-                if (GetComponent<PlayerInputs>().buttonADown) {
-                    // Open/close the door by running the 'Open' function found in the 'Door' script
-                    if (dooropening.RotationPending == false) {
+				if (GetComponent<PlayerInputs> () == null && gameObject.CompareTag ("Enemy")) {
+					if (dooropening.RotationPending == false) {
 						animBody.SetBool("isInteract", true);
-                        SoundManager.instance.PlaySingle(doorEfx);
-                        hit.collider.GetComponent<Door>().Speed = 1;
-                        StartCoroutine(hit.collider.GetComponent<Door>().Move());
+						SoundManager.instance.PlaySingle(doorEfx);
+						hit.collider.GetComponent<Door>().Speed = 1;
+						StartCoroutine(hit.collider.GetComponent<Door>().Move());
 						animBody.SetBool("isInteract", false);
-                    }
-                }
+					}
+				
+				}else{
+	                if (GetComponent<PlayerInputs>().buttonADown) {
+	                    // Open/close the door by running the 'Open' function found in the 'Door' script
+	                    if (dooropening.RotationPending == false) {
+							animBody.SetBool("isInteract", true);
+	                        SoundManager.instance.PlaySingle(doorEfx);
+	                        hit.collider.GetComponent<Door>().Speed = 1;
+	                        StartCoroutine(hit.collider.GetComponent<Door>().Move());
+							animBody.SetBool("isInteract", false);
+	                    }
+	                }
+				}
             } else {
                 InReach = false;
             }
