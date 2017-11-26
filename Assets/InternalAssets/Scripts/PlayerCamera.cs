@@ -118,7 +118,6 @@ public class PlayerCamera : MonoBehaviour {
             RenderTexture sonarTmp2 = RenderTexture.GetTemporary(source.width, source.height);
             sonarMat.SetFloat("_ScanDistance", wave.distance);
             sonarMat.SetVector("_WorldSpaceScannerPos", wave.origin);
-			//sonarMat.SetVector("_WorldSpaceCameraPos", transform.position);
 			sonarMat.SetColor("_LeadColor", wave.leadColor);
 			sonarMat.SetColor("_MidColor", wave.middleColor);
 			sonarMat.SetColor("_TrailColor", wave.trailColor);

@@ -8,7 +8,7 @@ public class InteractDoor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		animBody = GameObject.Find("Jason").GetComponent <Animator> ();
+		animBody = GetComponent <Animator> ();
 	}
 	
 	// Update is called once per frame

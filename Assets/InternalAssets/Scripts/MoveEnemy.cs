@@ -30,7 +30,7 @@ public class MoveEnemy : MonoBehaviour {
 		SoundManager.I.jason = agent;
 		goalPosition = RandomPoint(transform.position, rangeMax);
 		agent.destination = goalPosition;
-		animBody = GameObject.Find("Jason").GetComponent <Animator> ();
+		animBody = GetComponent <Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -74,6 +74,10 @@ public class MoveEnemy : MonoBehaviour {
 			agent.destination = goalPosition;
 		}
 
+	}
+
+	public void FixedUpdate() {
+		transform.position = new Vector3(transform.position.x, -1.5f, transform.position.z);
 	}
 
 	public void GoToRandomPoint(){
