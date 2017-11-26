@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HearNoise : MonoBehaviour {
 
-
-
 	// Use this for initialization
 	void Start () {
 		

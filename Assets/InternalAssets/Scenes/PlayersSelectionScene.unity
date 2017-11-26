@@ -885,6 +885,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 114342644232667656, guid: ecbae01e97fd125428390c7e74e4fbb5,
+        type: 2}
+      propertyPath: stepSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ab16b3e0c683874e82e7b38220304ad, type: 3}
+    - target: {fileID: 114342644232667656, guid: ecbae01e97fd125428390c7e74e4fbb5,
+        type: 2}
+      propertyPath: stepRange
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecbae01e97fd125428390c7e74e4fbb5, type: 2}
   m_IsPrefabParent: 0
@@ -1213,6 +1223,16 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
+    - target: {fileID: 114054174413589248, guid: 8fa34d35938223643aacc695e9ba0824,
+        type: 2}
+      propertyPath: stepSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ab16b3e0c683874e82e7b38220304ad, type: 3}
+    - target: {fileID: 114054174413589248, guid: 8fa34d35938223643aacc695e9ba0824,
+        type: 2}
+      propertyPath: stepRange
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8fa34d35938223643aacc695e9ba0824, type: 2}
   m_IsPrefabParent: 0
@@ -1263,6 +1283,16 @@ Prefab:
     - target: {fileID: 4212998960221678, guid: 094904626c8a73940accd7bf4c0cb788, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114317418127908068, guid: 094904626c8a73940accd7bf4c0cb788,
+        type: 2}
+      propertyPath: stepSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ab16b3e0c683874e82e7b38220304ad, type: 3}
+    - target: {fileID: 114317418127908068, guid: 094904626c8a73940accd7bf4c0cb788,
+        type: 2}
+      propertyPath: stepRange
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 094904626c8a73940accd7bf4c0cb788, type: 2}
@@ -1677,6 +1707,7 @@ MonoBehaviour:
   musicSource: {fileID: 1568677240}
   lowPitchRange: 0.95
   highPitchRange: 1.05
+  jason: {fileID: 0}
 --- !u!4 &1568677239
 Transform:
   m_ObjectHideFlags: 0
@@ -1757,7 +1788,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -1837,7 +1868,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2266,6 +2297,16 @@ Prefab:
     - target: {fileID: 4537451029724796, guid: 75437a03a4c01b641bc6d80a91122f0e, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 114336704998579044, guid: 75437a03a4c01b641bc6d80a91122f0e,
+        type: 2}
+      propertyPath: stepSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ab16b3e0c683874e82e7b38220304ad, type: 3}
+    - target: {fileID: 114336704998579044, guid: 75437a03a4c01b641bc6d80a91122f0e,
+        type: 2}
+      propertyPath: stepRange
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75437a03a4c01b641bc6d80a91122f0e, type: 2}

@@ -25,6 +25,11 @@ public class PlayerInputs : MonoBehaviour
     private bool allowMovement;
 	private Animator animBody;
 
+	public AudioClip stepSound;
+	public float stepRange = 3f;
+	private float lastStepTime;
+	private float stepInterval = .5f;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -63,6 +68,10 @@ public class PlayerInputs : MonoBehaviour
             cc.Move(moveVector * speed * Time.deltaTime);
 			transform.LookAt(transform.position + moveVector);
             animBody.SetFloat("runSpeed", Mathf.Abs(moveVector.x+moveVector.z));
+			if (moveVector.sqrMagnitude > 0.0001 && lastStepTime + stepInterval < Time.time) {
+				lastStepTime = Time.time;
+				SoundManager.I.PlayHearableSound(transform.position, stepSound, stepRange);
+			}
         }
 	}
 
