@@ -1453,8 +1453,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1286051300005166}
-  m_LocalRotation: {x: -0, y: 0.93376917, z: -0, w: 0.3578759}
-  m_LocalPosition: {x: -4.799999, y: -1.5, z: 0.0000009838298}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.8, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4045518898416098}
@@ -1904,15 +1904,15 @@ Light:
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 80
-  m_SpotAngle: 90
+  m_Range: 100
+  m_SpotAngle: 80
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
+    m_Bias: 0.12
     m_NormalBias: 0.4
     m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
@@ -1939,8 +1939,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 20
+  m_Intensity: 0.5
+  m_Range: 40
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1978,6 +1978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pcam: {fileID: 0}
   stunDuration: 3
+  punchEfx: {fileID: 8300000, guid: 8eed440e5965ca3498324949ef7b57fe, type: 3}
 --- !u!114 &114248130091289472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1994,7 +1995,7 @@ MonoBehaviour:
   Character: e
   DebugRayColor: {r: 0, g: 0, b: 0, a: 0}
   Opacity: 1
-  doorEfx: {fileID: 8300000, guid: d21b8fb757f0c334093255ebbae5f07a, type: 3}
+  doorEfx: {fileID: 8300000, guid: 5d2263b401bfaff43aedf689a6566166, type: 3}
 --- !u!114 &114342644232667656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2007,6 +2008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  runEfx: {fileID: 8300000, guid: 49140805bd21cfd419fa3735d254e259, type: 3}
   moveVector: {x: 0, y: 0, z: 0}
 --- !u!114 &114858196517101400
 MonoBehaviour:

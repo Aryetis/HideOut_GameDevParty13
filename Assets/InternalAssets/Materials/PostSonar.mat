@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ControllerTest_Player1Material
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: PostSonar
+  m_Shader: {fileID: 4800000, guid: 08a3c79f2d9f97e4bb0a9f5681605bd8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -62,20 +62,22 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _LeadSharp: 10
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ScanDistance: 9.94065
+    - _ScanWidth: 3
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.1417604, g: 0.50735295, b: 0.17453766, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SonarAddColor: {r: 0, g: 0, b: 0, a: 0}
-    - _SonarBaseColor: {r: 0.1, g: 0.1, b: 0.1, a: 0}
-    - _SonarWaveColor: {r: 1, g: 0.1, b: 0.1, a: 0}
-    - _SonarWaveParams: {r: 1, g: 20, b: 20, a: 10}
-    - _SonarWaveVector: {r: 0, g: 0, b: 1, a: 0}
+    - _HBarColor: {r: 0.5, g: 0.5, b: 0.5, a: 0}
+    - _LeadColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MidColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    - _TrailColor: {r: 1, g: 0, b: 0, a: 1}

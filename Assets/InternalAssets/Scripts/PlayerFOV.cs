@@ -69,25 +69,7 @@ public class PlayerFOV : MonoBehaviour {
 	}
 
 	private void Update() {
-		// Testing
-		if (Input.GetKeyDown(KeyCode.P)) {
-			FOVRange += 50f;
-		}
-		if (Input.GetKeyDown(KeyCode.M)) {
-			FOVRange -= 50f;
-		}
-		if (Input.GetKeyDown(KeyCode.O)) {
-			FOVAngle += 10f;
-		}
-		if (Input.GetKeyDown(KeyCode.L)) {
-			FOVAngle -= 10f;
-		}
-		if (Input.GetKeyDown(KeyCode.I)) {
-			Intensity *= 2f;
-		}
-		if (Input.GetKeyDown(KeyCode.K)) {
-			Intensity /= 2f;
-		}
+
 	}
 
 }
