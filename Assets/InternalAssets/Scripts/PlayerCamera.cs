@@ -111,13 +111,14 @@ public class PlayerCamera : MonoBehaviour {
             RenderTexture.ReleaseTemporary(sonarTmp);
             sonarTmp = sonarTmp2;
         }
+
+        // Blur Effect
         if (!isBlurActive || blurEffect == null) {
             Graphics.Blit(sonarTmp, destination);
             RenderTexture.ReleaseTemporary(sonarTmp);
 			return;
 		}
 
-        // Blur Effect
 		RenderTexture tmp = RenderTexture.GetTemporary(source.width >> downRes, source.height >> downRes);
         Graphics.Blit(sonarTmp, tmp);
         RenderTexture.ReleaseTemporary(sonarTmp);
