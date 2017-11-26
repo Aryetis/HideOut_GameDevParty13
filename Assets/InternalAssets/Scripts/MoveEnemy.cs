@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -18,11 +18,16 @@ public class MoveEnemy : MonoBehaviour {
 	private float cooldownHunt = 0;
 	private Animator animBody;
 
+	public AudioClip stepSound;
+	public float stepRange = 10f;
+	private float lastStepTime;
+	private float stepInterval = .5f;
 
 	void Start () {
 		goalPosition = Vector3.zero;
 		myBody = GetComponent<Rigidbody> ();
 		agent = GetComponent<NavMeshAgent>();
+		SoundManager.I.jason = agent;
 		goalPosition = RandomPoint(transform.position, rangeMax);
 		agent.destination = goalPosition;
 		animBody = GetComponent <Animator> ();
@@ -42,8 +47,10 @@ public class MoveEnemy : MonoBehaviour {
 			agent.speed = normalSpeed;
 		}
 
-		if (hearNoise || seePlayer) {
+		if ((hearNoise || seePlayer) && lastStepTime + stepInterval < Time.time) {
 			//goalPosition = soundTarget.transform.position;
+			lastStepTime = Time.time;
+			SoundManager.I.PlayEnemySound(transform.position, stepSound, stepRange);
 			animBody.SetBool("isHunting", true);
 			agent.destination = goalPosition;
 			agent.speed = huntSpeed;
@@ -67,6 +74,10 @@ public class MoveEnemy : MonoBehaviour {
 			agent.destination = goalPosition;
 		}
 
+	}
+
+	public void FixedUpdate() {
+		transform.position = new Vector3(transform.position.x, -1.5f, transform.position.z);
 	}
 
 	public void GoToRandomPoint(){

@@ -66,7 +66,11 @@ public class PlayerInputs : MonoBehaviour
         }
 	}
 
-    public void SetJoyNumber(int joyNumber_)
+	public void FixedUpdate() {
+		transform.position = new Vector3(transform.position.x, -1.5f, transform.position.z);
+	}
+
+	public void SetJoyNumber(int joyNumber_)
     {
         joyNumber = joyNumber_;
     }
