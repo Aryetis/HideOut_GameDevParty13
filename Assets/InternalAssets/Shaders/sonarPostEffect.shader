@@ -86,6 +86,7 @@ Shader "Shader Forge/sonarPostEffect" {
                     half4 edge = lerp(_MidColor, _LeadColor, pow(diff, _LeadSharp));
                     scannerCol = lerp(_TrailColor, edge, diff);
                     scannerCol *= diff;
+					scannerCol.rgb = scannerCol.rgb * scannerCol.a;
                 }
 
                 return col + scannerCol;

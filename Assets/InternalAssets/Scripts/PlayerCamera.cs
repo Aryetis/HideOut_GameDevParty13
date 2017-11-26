@@ -26,6 +26,13 @@ public class PlayerCamera : MonoBehaviour {
 
         public bool Update() {
             distance += speed * Time.deltaTime;
+			float distancePortion = distance / maxDistance;
+			if (distancePortion > .8f) {
+				float fade = 1f - (distancePortion - .8f) / .2f;
+				leadColor.a = fade;
+				middleColor.a = fade;
+				trailColor.a = fade;
+			}
             if(distance > maxDistance)
             {
                 return false;
