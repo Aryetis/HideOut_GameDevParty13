@@ -1102,6 +1102,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 23131300944105986, guid: 939bda88bb1704740b0095f4ad98f9c0,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3d0e2ec2df3f4a243b91e3a207de56d6, type: 2}
     - target: {fileID: 4552501649939798, guid: 939bda88bb1704740b0095f4ad98f9c0, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0.64227283
@@ -1112,17 +1117,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4552501649939798, guid: 939bda88bb1704740b0095f4ad98f9c0, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.2241759
+      value: 0.22417589
       objectReference: {fileID: 0}
     - target: {fileID: 4552501649939798, guid: 939bda88bb1704740b0095f4ad98f9c0, type: 2}
       propertyPath: m_LocalRotation.w
       value: 0.7184842
       objectReference: {fileID: 0}
-    - target: {fileID: 23131300944105986, guid: 939bda88bb1704740b0095f4ad98f9c0,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 3d0e2ec2df3f4a243b91e3a207de56d6, type: 2}
     - target: {fileID: 1574798281601190, guid: 939bda88bb1704740b0095f4ad98f9c0, type: 2}
       propertyPath: m_Name
       value: Enemy
