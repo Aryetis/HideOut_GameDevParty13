@@ -19,11 +19,12 @@ public class PauseMenu : MonoBehaviour {
 			if (Input.GetButtonUp("JALL_Start") || Input.GetKeyUp(KeyCode.Return)) {
 				if (!firstPress) {
 					uiMenuRoot.SetActive(false);
+					Time.timeScale = 1f;
 				}
 				firstPress = false;
 			}
 			if (Input.GetButton("JALL_Start") || Input.GetKey(KeyCode.Return)) {
-				pressTime += Time.deltaTime;
+				pressTime += Time.fixedUnscaledDeltaTime;
 			}
 			if (pressTime > pressDuration) {
 				Destroy(GameObject.Find("PlayersFolder"));
@@ -36,6 +37,7 @@ public class PauseMenu : MonoBehaviour {
 				uiMenuRoot.SetActive(true);
 				pressTime = 0f;
 				firstPress = true;
+				Time.timeScale = Mathf.Epsilon;
 			}
 		}
 	}
