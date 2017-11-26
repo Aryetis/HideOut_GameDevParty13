@@ -20,7 +20,7 @@ public class PlayerInputs : MonoBehaviour
 	public bool buttonXUp { get; private set; }
 	private CharacterController cc;
 	[SerializeField]
-    private Vector3 moveVector;
+    public Vector3 moveVector;
     private bool allowMovement;
 
 	// Use this for initialization

@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4537451029724796}
   - component: {fileID: 33289667751058438}
+  - component: {fileID: 114774771219349928}
   - component: {fileID: 136664598035996442}
   - component: {fileID: 23679878852076120}
   - component: {fileID: 114336704998579044}
@@ -274,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  moveVector: {x: 0, y: 0, z: 0}
 --- !u!114 &114617303529728124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -285,7 +287,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c30f76b849d8634399c6ca13c690fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blurCoeff: 2
+  pcam: {fileID: 0}
+  stunDuration: 0
+--- !u!114 &114774771219349928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1896770110115276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7689643d982fc1441ac84528eb5783c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Reach: 4
+  InReach: 0
+  Character: e
+  DebugRayColor: {r: 0, g: 0, b: 0, a: 0}
+  Opacity: 1
 --- !u!114 &114944950437915134
 MonoBehaviour:
   m_ObjectHideFlags: 1

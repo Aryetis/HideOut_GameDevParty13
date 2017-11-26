@@ -41,7 +41,7 @@ public class Detection : MonoBehaviour
                 // Get access to the 'Door' script attached to the object that was hit
                 Door dooropening = Door.GetComponent<Door>();
 
-                if (Input.GetKey(Character)) {
+                if (GetComponent<PlayerInputs>().buttonXDown) {
                     // Open/close the door by running the 'Open' function found in the 'Door' script
                     if (dooropening.RotationPending == false) StartCoroutine(hit.collider.GetComponent<Door>().Move());
                 }
