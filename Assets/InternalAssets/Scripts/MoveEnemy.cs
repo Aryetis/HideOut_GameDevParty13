@@ -16,7 +16,7 @@ public class MoveEnemy : MonoBehaviour {
 	private bool seePlayer = false;
 	private GameObject soundTarget;
 	private float cooldownHunt = 0;
-
+	private Animator animBody;
 
 
 	void Start () {
@@ -25,6 +25,7 @@ public class MoveEnemy : MonoBehaviour {
 		agent = GetComponent<NavMeshAgent>();
 		goalPosition = RandomPoint(transform.position, rangeMax);
 		agent.destination = goalPosition;
+		animBody = GameObject.Find("Jason").GetComponent <Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -33,16 +34,22 @@ public class MoveEnemy : MonoBehaviour {
 			cooldownHunt -= 0.1f;
 			rangeMax = 2f;
 			agent.speed = 1;
+			animBody.SetBool("isHunting", false);
+
 		} else if(!hearNoise && !seePlayer){
+			animBody.SetBool("isHunting", false);
 			rangeMax = 30f;
 			agent.speed = normalSpeed;
 		}
 
 		if (hearNoise || seePlayer) {
-			//goalPosition = soundTarget.transform.position; 
+			//goalPosition = soundTarget.transform.position;
+			animBody.SetBool("isHunting", true);
 			agent.destination = goalPosition;
 			agent.speed = huntSpeed;
 		}
+
+		animBody.SetFloat("runSpeed", agent.speed);
 
 		if (transform.position.x == goalPosition.x && transform.position.z == goalPosition.z) {
 			if (hearNoise) {

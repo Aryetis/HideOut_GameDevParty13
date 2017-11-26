@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class InteractDoor : MonoBehaviour {
 
+	private Animator animBody;
+
 	// Use this for initialization
 	void Start () {
-		
+		animBody = GameObject.Find("Jason").GetComponent <Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -18,8 +20,10 @@ public class InteractDoor : MonoBehaviour {
 		if (gameObject.CompareTag ("Enemy")) {
 
 			if (col.gameObject.CompareTag ("Door")) {
+				animBody.SetBool("isOpening", true);
 				Debug.Log ("BAM LA PORTE !");
 				col.gameObject.GetComponent<DoorController>().openDoor();
+				animBody.SetBool("isOpening", false);
 			}
 		}
 	}

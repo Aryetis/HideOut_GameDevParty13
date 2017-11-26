@@ -15,6 +15,7 @@ public class PlayerAttack : MonoBehaviour {
 	public float stunDuration;
 	private float stunTime;
 	private bool isStunned;
+	private Animator animBody;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,7 @@ public class PlayerAttack : MonoBehaviour {
         colliderAttack.enabled = false;
 		inputs = GetComponent<PlayerInputs>();
 		playerfov = GetComponent<PlayerFOV>();
+		animBody = GetComponent <Animator> ();
     }
 	
 	// Update is called once per frame
@@ -34,11 +36,13 @@ public class PlayerAttack : MonoBehaviour {
 			SetVisibility(0);
 		}
         if (inputs.buttonADown) {
+			animBody.SetBool("isPunching", true);
             colliderAttack.enabled = true;
             PunchAttack();
         }
         if (inputs.buttonAUp) {
             colliderAttack.enabled = false;
+			animBody.SetBool("isPunching", false);
         }
 	}
 
@@ -58,9 +62,11 @@ public class PlayerAttack : MonoBehaviour {
 				plaAttack.Stun(false);
 			}
             else if(plaAttack.punchReceived == 3) {
+				animBody.SetBool("isKnocked", true);
                 Debug.Log(plaAttack.punchReceived);
 				plaAttack.SetVisibility(3);
 				plaAttack.Stun(true);
+				animBody.SetBool("isKnocked", false);
             }
         }
     }
