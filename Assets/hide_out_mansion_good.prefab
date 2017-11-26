@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 23171200944112030}
   - component: {fileID: 95646830691117572}
   m_Layer: 0
-  m_Name: hide_out_mansion_good_backUP
+  m_Name: hide_out_mansion_good
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
