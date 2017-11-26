@@ -95,9 +95,6 @@ public class PlayerCamera : MonoBehaviour {
         {
             waves.Remove(w);
         }
-        if (Input.GetKeyDown(KeyCode.E)) {
-            CastWave(new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f)), 5f, 10f, Color.white, Color.yellow, Color.red);
-        }
     }
 
 	private void LateUpdate() {
@@ -113,6 +110,7 @@ public class PlayerCamera : MonoBehaviour {
             RenderTexture sonarTmp2 = RenderTexture.GetTemporary(source.width, source.height);
             sonarMat.SetFloat("_ScanDistance", wave.distance);
             sonarMat.SetVector("_WorldSpaceScannerPos", wave.origin);
+			//sonarMat.SetVector("_WorldSpaceCameraPos", transform.position);
 			sonarMat.SetColor("_LeadColor", wave.leadColor);
 			sonarMat.SetColor("_MidColor", wave.middleColor);
 			sonarMat.SetColor("_TrailColor", wave.trailColor);

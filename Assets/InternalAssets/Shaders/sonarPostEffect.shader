@@ -23,7 +23,7 @@ Shader "Shader Forge/sonarPostEffect" {
             #include "UnityCG.cginc"
 
             sampler2D _MainTex;
-            sampler2D_float _CameraDepthTexture;
+            sampler2D_float _LastCameraDepthTexture;
             float4 _WorldSpaceScannerPos;
             float _ScanDistance;
             float _ScanWidth;
@@ -71,7 +71,7 @@ Shader "Shader Forge/sonarPostEffect" {
             float4 frag(VertOut i) : COLOR {
                 half4 col = tex2D(_MainTex, i.uv);
 
-                float rawDepth = DecodeFloatRG(tex2D(_CameraDepthTexture, i.uv_depth));
+                float rawDepth = DecodeFloatRG(tex2D(_LastCameraDepthTexture, i.uv_depth));
                 float linearDepth = Linear01Depth(rawDepth);
 
                 float4 wsDir = linearDepth * i.interpolatedRay;

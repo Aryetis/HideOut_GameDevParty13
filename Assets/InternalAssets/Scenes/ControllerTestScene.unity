@@ -667,6 +667,7 @@ MonoBehaviour:
   blurEffect: {fileID: 2100000, guid: 1fd6425b91e5ad94b93e8481f20ddb9c, type: 2}
   blurPasses: 4
   downRes: 3
+  sonarMat: {fileID: 0}
 --- !u!92 &929216293
 Behaviour:
   m_ObjectHideFlags: 0
@@ -891,6 +892,7 @@ MonoBehaviour:
   blurEffect: {fileID: 2100000, guid: 1fd6425b91e5ad94b93e8481f20ddb9c, type: 2}
   blurPasses: 4
   downRes: 3
+  sonarMat: {fileID: 0}
 --- !u!92 &1065418302
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1123,6 +1125,7 @@ GameObject:
   - component: {fileID: 1136092109}
   - component: {fileID: 1136092108}
   - component: {fileID: 1136092113}
+  - component: {fileID: 1136092114}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1218,6 +1221,17 @@ MonoBehaviour:
   - {fileID: 1065418301}
   splitScreensRoot: {fileID: 1762345234}
   numberOfPlayers: 0
+--- !u!114 &1136092114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1136092107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7ff7b602cadfdf4ab01541c5e9f23bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1182686779
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,6 +1480,7 @@ MonoBehaviour:
   blurEffect: {fileID: 2100000, guid: 1fd6425b91e5ad94b93e8481f20ddb9c, type: 2}
   blurPasses: 4
   downRes: 3
+  sonarMat: {fileID: 0}
 --- !u!92 &1399353233
 Behaviour:
   m_ObjectHideFlags: 0
@@ -2097,6 +2112,7 @@ MonoBehaviour:
   blurEffect: {fileID: 2100000, guid: 1fd6425b91e5ad94b93e8481f20ddb9c, type: 2}
   blurPasses: 4
   downRes: 3
+  sonarMat: {fileID: 0}
 --- !u!92 &2104432925
 Behaviour:
   m_ObjectHideFlags: 0
