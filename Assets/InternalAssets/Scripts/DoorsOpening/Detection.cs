@@ -56,8 +56,9 @@ public class Detection : MonoBehaviour
 	                if (GetComponent<PlayerInputs>().buttonADown) {
 	                    // Open/close the door by running the 'Open' function found in the 'Door' script
 	                    if (dooropening.RotationPending == false) {
+							SoundManager.I.PlayHearableSound(hit.collider.transform.position, doorEfx, 10f);
 							animBody.SetBool("isInteract", true);
-	                        SoundManager.instance.PlaySingle(doorEfx);
+	                        //SoundManager.instance.PlaySingle(doorEfx);
 	                        hit.collider.GetComponent<Door>().Speed = 1;
 	                        StartCoroutine(hit.collider.GetComponent<Door>().Move());
 							animBody.SetBool("isInteract", false);
