@@ -10,11 +10,17 @@ public class PlayerCamera : MonoBehaviour {
         public float distance;
         public float maxDistance;
         public float speed;
+		public Color leadColor;
+		public Color middleColor;
+		public Color trailColor;
 
-        public Wave(Vector3 ori, float sp, float maxDist) {
+        public Wave(Vector3 ori, float sp, float maxDist, Color lead, Color middle, Color trail) {
             origin = ori;
             speed = sp;
             maxDistance = maxDist;
+			leadColor = lead;
+			middleColor = middle;
+			trailColor = trail;
             distance = 0f;
         }
 
@@ -90,7 +96,7 @@ public class PlayerCamera : MonoBehaviour {
             waves.Remove(w);
         }
         if (Input.GetKeyDown(KeyCode.E)) {
-            CastWave(new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f)), 5f, 10f);
+            CastWave(new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f)), 5f, 10f, Color.white, Color.yellow, Color.red);
         }
     }
 
@@ -107,7 +113,10 @@ public class PlayerCamera : MonoBehaviour {
             RenderTexture sonarTmp2 = RenderTexture.GetTemporary(source.width, source.height);
             sonarMat.SetFloat("_ScanDistance", wave.distance);
             sonarMat.SetVector("_WorldSpaceScannerPos", wave.origin);
-            RaycastCornerBlit(sonarTmp, sonarTmp2, sonarMat);
+			sonarMat.SetColor("_LeadColor", wave.leadColor);
+			sonarMat.SetColor("_MidColor", wave.middleColor);
+			sonarMat.SetColor("_TrailColor", wave.trailColor);
+			RaycastCornerBlit(sonarTmp, sonarTmp2, sonarMat);
             RenderTexture.ReleaseTemporary(sonarTmp);
             sonarTmp = sonarTmp2;
         }
@@ -200,14 +209,14 @@ public class PlayerCamera : MonoBehaviour {
 		renderTexture.Release();
 	}
 
-    public void CastWave(Vector3 pos, float speed, float maxDistance) {
-        Wave w = new Wave(pos, speed, maxDistance);
+    public void CastWave(Vector3 pos, float speed, float maxDistance, Color lead, Color middle, Color trail) {
+        Wave w = new Wave(pos, speed, maxDistance, lead, middle, trail);
         waves.Add(w);
     }
 
-    public static void CastWaveOnAll(Vector3 pos, float speed, float maxDistance) {
+    public static void CastWaveOnAll(Vector3 pos, float speed, float maxDistance, Color lead, Color middle, Color trail) {
         foreach (PlayerCamera cam in cameras) {
-            cam.CastWave(pos, speed, maxDistance);
+            cam.CastWave(pos, speed, maxDistance, lead, middle, trail);
         }
     }
 
