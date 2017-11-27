@@ -31,7 +31,7 @@ public class JoystickManager : MonoBehaviour
         foreach(GameObject go in statusList)
             go.SetActive(false);
 
-        joystickStatus = new bool[] {false, false, false, false, false, false, false, false};
+        joystickStatus = new bool[] {false, false, false, false, false, false, false, false, false, false, false};
 
         foreach(Transform t in playersFolder.transform)
         {
@@ -136,21 +136,54 @@ public class JoystickManager : MonoBehaviour
                 activePlayersNumber++;
                 joystickStatus[7] = true; 
             }
+            if(Input.GetAxisRaw("J9_Start") > 0 && !joystickStatus[8] )
+            {
+                Debug.Log("KeyCode.Joystick9Button7 START PRESSED");
+                statusList[activePlayersNumber].SetActive(true);
+                playersList[activePlayersNumber].SetActive(true);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(9);
+                activePlayersNumber++;
+                joystickStatus[8] = true; 
+            }
+            if(Input.GetAxisRaw("J10_Start") > 0 && !joystickStatus[9] )
+            {
+                Debug.Log("KeyCode.Joystick10Button7 START PRESSED");
+                statusList[activePlayersNumber].SetActive(true);
+                playersList[activePlayersNumber].SetActive(true);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(10);
+                activePlayersNumber++;
+                joystickStatus[9] = true; 
+            }
+            if(Input.GetAxisRaw("J11_Start") > 0 && !joystickStatus[10] )
+            {
+                Debug.Log("KeyCode.Joystick11Button7 START PRESSED");
+                statusList[activePlayersNumber].SetActive(true);
+                playersList[activePlayersNumber].SetActive(true);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(11);
+                activePlayersNumber++;
+                joystickStatus[10] = true; 
+            }
 
         }
 
-		if (Input.GetButton("JALL_Start") || Input.GetKey(KeyCode.Return)) {
+        if (Input.GetButton("JALL_Start") || Input.GetKey(KeyCode.Return)) 
+        {
             TimerToStart -= Time.deltaTime;
 		}
 
-		if (Input.GetButtonUp("JALL_Start")) {
+		if (Input.GetButtonUp("JALL_Start"))
+        {
 			TimerToStart = 2.0f;
 		}
 
 		/*****************************
          * HOLD START TO LAUNCH GAME *
          *****************************/
-		if (TimerToStart <= 0 && SceneManager.GetActiveScene().name == "PlayersSelectionScene") {
+		if (TimerToStart <= 0 && SceneManager.GetActiveScene().name == "PlayersSelectionScene")
+        {
 			//SceneManager.LoadScene("SonarTestScene");
 			//SceneManager.LoadScene("ControllerTestScene");
 			SceneManager.LoadScene("MainGame");

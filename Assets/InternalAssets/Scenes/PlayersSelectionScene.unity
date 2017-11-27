@@ -929,6 +929,16 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 108819438733763170, guid: ecbae01e97fd125428390c7e74e4fbb5,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108169656750493000, guid: ecbae01e97fd125428390c7e74e4fbb5,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ecbae01e97fd125428390c7e74e4fbb5, type: 2}
   m_IsPrefabParent: 0
@@ -1467,6 +1477,16 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 108970298450739636, guid: f58d15dbf22943142b7942261b237951,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108008437040656198, guid: f58d15dbf22943142b7942261b237951,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f58d15dbf22943142b7942261b237951, type: 2}
   m_IsPrefabParent: 0
@@ -1914,6 +1934,16 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 108714222780928488, guid: 36122ad2643af644d9f0685ab8521f04,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108535391046015366, guid: 36122ad2643af644d9f0685ab8521f04,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 36122ad2643af644d9f0685ab8521f04, type: 2}
   m_IsPrefabParent: 0
@@ -2060,6 +2090,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4803737032311424, guid: b8196205782332147a80b0a68c21bfdc, type: 2}
       propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108777031696180562, guid: b8196205782332147a80b0a68c21bfdc,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108014542964163310, guid: b8196205782332147a80b0a68c21bfdc,
+        type: 2}
+      propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
