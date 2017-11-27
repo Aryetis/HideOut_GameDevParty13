@@ -18,7 +18,7 @@ A -> Open door
 
 X -> Kick other players
 
-You can use [W/X/C/V] to emulate [P1/P2/P3/P4] Start inputs if you just want to try out the game by yourself.
+You can use [W/X/C/V] to emulate [P1/P2/P3/P4] Start inputs if you just want to try out the game by yourself. But you'll still need at least ONE Xbox360Controller.
  
 ## RELEASE :
 V0.1 : https://github.com/Aryetis/HideOut_GameDevParty13/releases/tag/V0.1
