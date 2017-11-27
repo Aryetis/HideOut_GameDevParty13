@@ -72,5 +72,10 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.13884082, g: 0.78676474, b: 0.115700714, a: 1}
+    - _Color: {r: 0.1417604, g: 0.50735295, b: 0.17453766, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _SonarAddColor: {r: 0, g: 0, b: 0, a: 0}
+    - _SonarBaseColor: {r: 0.1, g: 0.1, b: 0.1, a: 0}
+    - _SonarWaveColor: {r: 1, g: 0.1, b: 0.1, a: 0}
+    - _SonarWaveParams: {r: 1, g: 20, b: 20, a: 10}
+    - _SonarWaveVector: {r: 0, g: 0, b: 1, a: 0}

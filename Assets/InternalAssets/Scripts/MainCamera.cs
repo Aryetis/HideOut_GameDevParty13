@@ -29,8 +29,8 @@ public class MainCamera : MonoBehaviour {
 	}
 
 	private void Start() {
-		int pcamWidth = cam.pixelWidth / 2;
-		int pcamHeight = cam.pixelHeight / 2;
+		int pcamWidth = cam.pixelWidth / countX;
+		int pcamHeight = cam.pixelHeight / countY;
 		for (int i = 0; i < numberOfPlayers; i++) {
 			cameras[i].Init(pcamWidth, pcamHeight);
 		}

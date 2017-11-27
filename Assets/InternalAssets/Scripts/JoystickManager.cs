@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +13,8 @@ public class JoystickManager : MonoBehaviour
     private bool[] joystickStatus; // false <=> unattributed joystick
     private int activePlayersNumber;
     private float TimerToStart;
+
+	public AudioClip gameMusic;
 
 	// Use this for initialization
 	void Start ()
@@ -29,7 +31,7 @@ public class JoystickManager : MonoBehaviour
         foreach(GameObject go in statusList)
             go.SetActive(false);
 
-        joystickStatus = new bool[] {false, false, false, false, false, false, false, false};
+        joystickStatus = new bool[] {false, false, false, false, false, false, false, false, false, false, false};
 
         foreach(Transform t in playersFolder.transform)
         {
@@ -52,9 +54,9 @@ public class JoystickManager : MonoBehaviour
         /********************************************
          * ASSIGNING JOYSYICK NUMBER TO EACH PLAYER *
          ********************************************/
-        if(Input.GetButton("PALL_Start") && activePlayersNumber <= 4)
+        if(activePlayersNumber <= 4)
         {
-            if(Input.GetKeyDown(KeyCode.Joystick1Button7) && !joystickStatus[0] )
+            if(Input.GetAxisRaw("J1_Start") > 0 && !joystickStatus[0] )
             {
                 Debug.Log("KeyCode.Joystick1Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
@@ -64,7 +66,7 @@ public class JoystickManager : MonoBehaviour
                 activePlayersNumber++;
                 joystickStatus[0] = true; 
             }
-            if(Input.GetKeyDown(KeyCode.Joystick2Button7) && !joystickStatus[1] )
+            if(Input.GetAxisRaw("J2_Start") > 0 && !joystickStatus[1] )
             {
                 Debug.Log("KeyCode.Joystick2Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
@@ -74,7 +76,7 @@ public class JoystickManager : MonoBehaviour
                 activePlayersNumber++;
                 joystickStatus[1] = true;
             }
-            if(Input.GetKeyDown(KeyCode.Joystick3Button7) && !joystickStatus[2] )
+            if(Input.GetAxisRaw("J3_Start") > 0 && !joystickStatus[2] )
             {
                 Debug.Log("KeyCode.Joystick3Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
@@ -84,7 +86,7 @@ public class JoystickManager : MonoBehaviour
                 activePlayersNumber++;
                 joystickStatus[2] = true; 
             }
-            if(Input.GetKeyDown(KeyCode.Joystick4Button7) && !joystickStatus[3] )
+            if(Input.GetAxisRaw("J4_Start") > 0 && !joystickStatus[3] )
             {
                 Debug.Log("KeyCode.Joystick4Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
@@ -94,7 +96,7 @@ public class JoystickManager : MonoBehaviour
                 activePlayersNumber++;
                 joystickStatus[3] = true;   
             }
-            if(Input.GetKeyDown(KeyCode.Joystick5Button7) && !joystickStatus[4] )
+            if(Input.GetAxisRaw("J5_Start") > 0 && !joystickStatus[4] )
             {                
                 Debug.Log("KeyCode.Joystick5Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
@@ -104,7 +106,7 @@ public class JoystickManager : MonoBehaviour
                 activePlayersNumber++;
                 joystickStatus[4] = true;    
             }
-            if(Input.GetKeyDown(KeyCode.Joystick6Button7) && !joystickStatus[5] )
+            if(Input.GetAxisRaw("J6_Start") > 0 && !joystickStatus[5] )
             {
                 Debug.Log("KeyCode.Joystick6Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
@@ -114,7 +116,7 @@ public class JoystickManager : MonoBehaviour
                 activePlayersNumber++;
                 joystickStatus[5] = true; 
             }
-            if(Input.GetKeyDown(KeyCode.Joystick7Button7) && !joystickStatus[6] )
+            if(Input.GetAxisRaw("J7_Start") > 0 && !joystickStatus[6] )
             {
                 Debug.Log("KeyCode.Joystick7Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
@@ -124,7 +126,7 @@ public class JoystickManager : MonoBehaviour
                 activePlayersNumber++;
                 joystickStatus[6] = true; 
             }
-            if(Input.GetKeyDown(KeyCode.Joystick8Button7) && !joystickStatus[7] )
+            if(Input.GetAxisRaw("J8_Start") > 0 && !joystickStatus[7] )
             {
                 Debug.Log("KeyCode.Joystick8Button7 START PRESSED");
                 statusList[activePlayersNumber].SetActive(true);
@@ -134,14 +136,61 @@ public class JoystickManager : MonoBehaviour
                 activePlayersNumber++;
                 joystickStatus[7] = true; 
             }
+            if(Input.GetAxisRaw("J9_Start") > 0 && !joystickStatus[8] )
+            {
+                Debug.Log("KeyCode.Joystick9Button7 START PRESSED");
+                statusList[activePlayersNumber].SetActive(true);
+                playersList[activePlayersNumber].SetActive(true);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(9);
+                activePlayersNumber++;
+                joystickStatus[8] = true; 
+            }
+            if(Input.GetAxisRaw("J10_Start") > 0 && !joystickStatus[9] )
+            {
+                Debug.Log("KeyCode.Joystick10Button7 START PRESSED");
+                statusList[activePlayersNumber].SetActive(true);
+                playersList[activePlayersNumber].SetActive(true);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(10);
+                activePlayersNumber++;
+                joystickStatus[9] = true; 
+            }
+            if(Input.GetAxisRaw("J11_Start") > 0 && !joystickStatus[10] )
+            {
+                Debug.Log("KeyCode.Joystick11Button7 START PRESSED");
+                statusList[activePlayersNumber].SetActive(true);
+                playersList[activePlayersNumber].SetActive(true);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetAllowMovement(false);
+                playersList[activePlayersNumber].GetComponent<PlayerInputs>().SetJoyNumber(11);
+                activePlayersNumber++;
+                joystickStatus[10] = true; 
+            }
 
-            TimerToStart -= Time.deltaTime;
         }
 
-        /*****************************
+        if (Input.GetButton("JALL_Start") || Input.GetKey(KeyCode.Return)) 
+        {
+            TimerToStart -= Time.deltaTime;
+		}
+
+		if (Input.GetButtonUp("JALL_Start"))
+        {
+			TimerToStart = 2.0f;
+		}
+
+		/*****************************
          * HOLD START TO LAUNCH GAME *
          *****************************/
-        if(TimerToStart <= 0 &&  SceneManager.GetActiveScene().name == "PlayersSelectionScene")
-            SceneManager.LoadScene("ControllerTestScene");
+		if (TimerToStart <= 0 && SceneManager.GetActiveScene().name == "PlayersSelectionScene")
+        {
+			//SceneManager.LoadScene("SonarTestScene");
+			//SceneManager.LoadScene("ControllerTestScene");
+			SceneManager.LoadScene("MainGame");
+			SoundManager.I.musicSource.Stop();
+			SoundManager.I.musicSource.clip = gameMusic;
+			SoundManager.I.musicSource.Play();
+		}
+			
 	}
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInputs : MonoBehaviour 
 {
     public float speed;
+    public AudioClip runEfx;
 
     private int joyNumber; // use Kecode.KeyCode.Joystick[joyNumber+1]ButtonXXX for buttons , and P[joyNumber]_[Horizontal/Vertical] for axis
     private float leftJoystickHorizontalInput;
@@ -20,8 +21,9 @@ public class PlayerInputs : MonoBehaviour
 	public bool buttonXUp { get; private set; }
 	private CharacterController cc;
 	[SerializeField]
-    private Vector3 moveVector;
+    public Vector3 moveVector;
     private bool allowMovement;
+	private Animator animBody;
 
 	// Use this for initialization
 	void Start ()
@@ -29,6 +31,7 @@ public class PlayerInputs : MonoBehaviour
         allowMovement = false;
         moveVector = new Vector3();
         cc = GetComponent<CharacterController>();
+		animBody = GetComponent <Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -59,10 +62,15 @@ public class PlayerInputs : MonoBehaviour
             moveVector.z = leftJoystickVerticalInput;
             cc.Move(moveVector * speed * Time.deltaTime);
 			transform.LookAt(transform.position + moveVector);
+			animBody.SetFloat("runSpeed", Mathf.Abs(moveVector.x)+Mathf.Abs(moveVector.z));
         }
 	}
 
-    public void SetJoyNumber(int joyNumber_)
+	public void FixedUpdate() {
+		transform.position = new Vector3(transform.position.x, -1.5f, transform.position.z);
+	}
+
+	public void SetJoyNumber(int joyNumber_)
     {
         joyNumber = joyNumber_;
     }
@@ -71,4 +79,8 @@ public class PlayerInputs : MonoBehaviour
     {
         allowMovement = allowMovement_;
     }
+
+	public bool GetAllowMovement() {
+		return allowMovement;
+	}
 }
