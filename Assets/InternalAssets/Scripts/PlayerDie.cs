@@ -30,7 +30,7 @@ public class PlayerDie : MonoBehaviour {
 	}
 
 	void Disappear(){
-		gameObject.active = false;
+        gameObject.SetActive(false);
 		animBody.SetBool("isDead", false);
 	}
 }

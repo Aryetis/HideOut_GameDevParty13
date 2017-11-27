@@ -6,7 +6,7 @@ public class SeePlayer : MonoBehaviour {
 
 	GameObject enemy;
     public AudioClip seeEfx;
-    private bool playFx = false;
+//    private bool playFx = false;
     private float time;
 
     // Use this for initialization
