@@ -8,7 +8,7 @@ Players control your typical slasher movies protagonists. It's the usual situati
 
 ## HOW TO PLAY :
 
-The goal is simple, be the last avoid, just avoid at all cost Json because they will kill you and be wary about your friends. Keeps in mind that Json can hear the sound of doors opening (represented visually by blue waves), but on the other hand you can hear his footsteps (represented visually by red waves). 
+The goal is simple, be the last alive, just avoid at all cost Json because they will kill you and be wary about your friends. Keep in mind that Json can hear the sound of doors opening (represented visually by blue waves), but on the other hand you can hear his footsteps (represented visually by red waves). 
 
 ## CONTROLS :
 
