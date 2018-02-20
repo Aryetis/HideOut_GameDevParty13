@@ -23,7 +23,13 @@ public class MoveEnemy : MonoBehaviour {
 	private float lastStepTime;
 	private float stepInterval = .5f;
 
-	void Start () {
+    
+    private float cooldownRespawn = 5f;
+    private float timerFreeze = 0;
+    private Vector3 spawnPosition;
+    private Vector3 previousPosition;
+
+    void Start () {
 		goalPosition = Vector3.zero;
 		myBody = GetComponent<Rigidbody> ();
 		agent = GetComponent<NavMeshAgent>();
@@ -31,10 +37,26 @@ public class MoveEnemy : MonoBehaviour {
 		goalPosition = RandomPoint(transform.position, rangeMax);
 		agent.destination = goalPosition;
 		animBody = GetComponent <Animator> ();
-	}
+        spawnPosition = transform.position;
+        previousPosition = transform.position;
+    }
 	
 	// Update is called once per frame
 	void Update () {
+
+        //if(Mathf.Abs(myBody.velocity.x) < 0.01 && Mathf.Abs(myBody.velocity.z) < 0.01) {
+        if (Vector3.Distance(previousPosition, transform.position) < 0.01) {
+            timerFreeze += 0.01f;
+        }
+        else {
+            timerFreeze = 0;
+        }
+        previousPosition = transform.position;
+
+        if (timerFreeze > cooldownRespawn) {
+            RespawnJason();
+        }
+
 		if (cooldownHunt > 1) {
 			cooldownHunt -= 0.1f;
 			rangeMax = 2f;
@@ -99,7 +121,13 @@ public class MoveEnemy : MonoBehaviour {
 		return result;
 	}
 
-	public void setGoalPosition(Vector3 pos){
+    public void RespawnJason() {
+        timerFreeze = 0;
+        transform.position = spawnPosition;
+        agent.destination = RandomPoint(transform.position, rangeMax);
+    }
+
+    public void setGoalPosition(Vector3 pos){
 		goalPosition = pos;
 	}
 

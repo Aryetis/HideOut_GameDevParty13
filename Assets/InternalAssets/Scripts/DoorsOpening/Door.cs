@@ -12,7 +12,7 @@ public class Door : MonoBehaviour
     public enum SideOfRotation { Left, Right }
     public SideOfRotation RotationSide;
     [Tooltip("Rotating speed of the door/window.")]
-    public float Speed = 3F;
+    public float Speed = 10F;
     [Tooltip("0 = infinite times")]
     public int TimesMoveable = 0;
 

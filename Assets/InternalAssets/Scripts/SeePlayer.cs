@@ -26,7 +26,6 @@ public class SeePlayer : MonoBehaviour {
 				RaycastHit hit;
 				if(Physics.Raycast(enemy.transform.position, (col.gameObject.transform.position - enemy.transform.position), out hit)){
 					if (hit.transform == col.gameObject.transform) {
-						Debug.Log ("Y A UN MEC !");
 						gameObject.GetComponentInParent<MoveEnemy> ().setSeePlayer(true);      
 						gameObject.GetComponentInParent<MoveEnemy> ().setGoalPosition(col.gameObject.transform.position);
 					}
