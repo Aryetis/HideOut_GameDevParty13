@@ -154,7 +154,7 @@ public class Door : MonoBehaviour
                 // Make the door/window rotate until it is fully opened/closed
                 while (Mathf.Abs(Quaternion.Angle(FinalRotation, hinge.transform.rotation)) > 0.01f) {
                     RotationPending = true;
-                    hinge.transform.rotation = Quaternion.Lerp(hinge.transform.rotation, FinalRotation, Time.deltaTime * Speed);
+                    hinge.transform.rotation = Quaternion.Lerp(hinge.transform.rotation, FinalRotation, (Time.deltaTime * Speed) * 4);
                     yield return new WaitForEndOfFrame();
                 }
 
@@ -171,7 +171,7 @@ public class Door : MonoBehaviour
                 // Make the door/window rotate until it is fully opened/closed
                 while (Mathf.Abs(Quaternion.Angle(FinalRotation, transform.rotation)) > 0.01f) {
                     RotationPending = true;
-                    transform.rotation = Quaternion.Lerp(transform.rotation, FinalRotation, Time.deltaTime * Speed);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, FinalRotation, (Time.deltaTime * Speed) * 4);
                     yield return new WaitForEndOfFrame();
                 }
 

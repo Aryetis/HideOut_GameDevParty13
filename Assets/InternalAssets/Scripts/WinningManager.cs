@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WinningManager : MonoBehaviour {
 	private GameObject playersFolder;
 	private List<GameObject> activePlayersList;
 
 	public GameObject winUi;
-	private bool hasWon = false;
+    public Text Textwin;
+    private bool hasWon = false;
 
 	// Use this for initialization
 	void Start() {
@@ -28,8 +30,13 @@ public class WinningManager : MonoBehaviour {
 				activePlayersList.RemoveAt(i);
 				i--;
 			}
+            if (activePlayersList.Count == 1) {
 
-			if (activePlayersList.Count <= 1) {
+                Textwin.text = " " + activePlayersList[0].name + " Win !";
+            }
+
+
+            if (activePlayersList.Count <= 1) {
 				Time.timeScale = 0.00000000000000000001f;
 				winUi.SetActive(true);
 				StartCoroutine(BackToMainMenu());

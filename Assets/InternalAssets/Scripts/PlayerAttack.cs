@@ -72,8 +72,8 @@ public class PlayerAttack : MonoBehaviour {
 				plaAttack.SetVisibility(3);
 				plaAttack.Stun(true);
 
-				Invoke ("Stun", 1);
             }
+            Invoke("Stun", 1);
         }
     }
 
